@@ -1,0 +1,345 @@
+/*
+=================================================================
+  Erika Guido's Portfolio - Final Stylesheet V3
+=================================================================
+*/
+
+/* 
+  1. VARIABLES & BASE SETUP
+*/
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Prevents the sticky header from covering the section title */
+}
+
+:root {
+    /* Color Palette */
+    --dark-slate: #555879;
+    --periwinkle: #98A1BC;
+    --sand: #DED3C4;
+    --cream: #F4EBD3;
+    
+    /* Light Theme Colors */
+    --bg-color-light: var(--sand);
+    --card-bg-light: var(--cream);
+    --text-color-light: var(--dark-slate);
+    --accent-color-light: var(--dark-slate);
+
+    /* Dark Theme Colors */
+    --bg-color-dark: var(--dark-slate);
+    --card-bg-dark: #474965;
+    --text-color-dark: var(--cream);
+    --accent-color-dark: var(--periwinkle);
+    
+    /* Font Families */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    font-family: var(--font-body);
+    margin: 0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.dark-mode {
+    --bg-color-light: var(--bg-color-dark);
+    --card-bg-light: var(--card-bg-dark);
+    --text-color-light: var(--text-color-dark);
+    --accent-color-light: var(--accent-color-dark);
+}
+
+/* 
+  2. HEADER & NAVIGATION
+*/
+header {
+    background: var(--card-bg-light);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.4s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.nav-logo { text-decoration: none; color: inherit; }
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color-light);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--accent-color-light);
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* ==> NEW: Hamburger Menu Styles ==> */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color-light);
+}
+
+/* 
+  3. SUN/MOON SLIDING TOGGLE SWITCH
+*/
+#theme-switcher {
+    position: relative; width: 54px; height: 28px; background-color: var(--periwinkle);
+    border-radius: 20px; border: none; cursor: pointer; transition: background-color 0.4s ease;
+}
+body.dark-mode #theme-switcher { background-color: var(--card-bg-light); }
+#theme-switcher::before, #theme-switcher::after {
+    content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+    font-size: 16px; transition: opacity 0.4s ease;
+}
+#theme-switcher::before { content: '☀️'; left: 6px; opacity: 1; }
+body.dark-mode #theme-switcher::before { opacity: 0.2; }
+#theme-switcher::after { content: '🌙'; right: 6px; opacity: 0.2; }
+body.dark-mode #theme-switcher::after { opacity: 1; }
+#theme-switcher .slider {
+    position: absolute; top: 3px; left: 4px; width: 22px; height: 22px;
+    background-color: var(--cream); border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+body.dark-mode #theme-switcher .slider { transform: translateX(25px); }
+
+/* 
+  4. GENERAL CONTENT & TYPOGRAPHY
+*/
+main { padding: 40px 5%; max-width: 1100px; margin: auto; }
+section { padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+section:last-of-type { border-bottom: none; }
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--accent-color-light);
+}
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color-light);
+    color: var(--bg-color-light);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 
+  5. SPECIFIC SECTION STYLES
+*/
+/* Hero Section */
+.hero { 
+    min-height: 70vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    position: relative; /* ==> ADD THIS LINE <== */
+    overflow: hidden;   /* ==> AND THIS LINE <== */
+}
+
+.typing-headline { 
+    font-size: clamp(2.5rem, 6vw, 4rem); 
+    color: var(--accent-color-light); 
+    margin: 0 0 1rem 0; 
+}
+
+.hero p { 
+    font-size: 1.2rem; 
+    max-width: 600px; 
+}
+
+.cursor { 
+    display: inline-block; 
+    background-color: var(--accent-color-light); 
+    animation: blink 1s infinite; 
+}
+
+@keyframes blink { 50% { background-color: transparent; } }
+
+/* About Me Section */
+.about-content { display: flex; align-items: center; gap: 50px; }
+.about-image { flex-basis: 40%; max-width: 350px; }
+.about-image img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.about-text { flex-basis: 60%; }
+.about-text h3 { font-size: 1.8rem; }
+.about-text p { line-height: 1.7; }
+.about-text .btn { margin-top: 20px; }
+
+/* Skills Section */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.skill-category h3 { border-bottom: 2px solid var(--accent-color-light); padding-bottom: 10px; margin-bottom: 20px; }
+.skill-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-pills span {
+    background-color: var(--card-bg-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Projects Section */
+.project-subsection { margin-bottom: 80px; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.project-card {
+    background: var(--card-bg-light); 
+    border-radius: 8px; 
+    border: 1px solid transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:not(.design-card) {
+    padding: 25px;
+}
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+.project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; margin-right: 15px; }
+
+/* Graphic Design Card Specifics */
+.design-card a { display: block; overflow: hidden; position: relative; }
+.design-card img { 
+    width: 100%; height: 220px; object-fit: cover; 
+    display: block; transition: transform 0.3s ease; 
+}
+.design-card:hover img { transform: scale(1.05); }
+.card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column;}
+.card-content h3 { margin-top: 0; }
+
+/* Contact Section */
+#contact { text-align: center; padding: 40px 20px; }
+#contact a { color: var(--accent-color-light); text-decoration: none; font-weight: bold; }
+
+/* 
+  6. RESPONSIVE DESIGN
+*/
+@media (max-width: 768px) {
+    .nav-menu { display: none; } /* On mobile, this menu will be hidden. A hamburger menu would replace it. */
+    .about-content { flex-direction: column; }
+    .typing-headline { font-size: 2rem; }
+}
+
+/*
+=================================================================
+  7. CREATIVE EXTRAS
+=================================================================
+*/
+
+/* Container to position the character */
+.pixel-character-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    overflow: hidden; /* Hides the character when it's off-screen */
+}
+
+.pixel-character {
+    /* Sizing the character */
+    width: 48px;  /* Original frame width (24px) x 2 */
+    height: 48px; /* We're scaling it up to be more visible */
+    
+    /* The sprite sheet image */
+    background-image: url('https://i.imgur.com/JqdYp6n.png');
+    
+    /* Ensures the pixel art stays sharp, not blurry */
+    image-rendering: pixelated;
+    
+    /* Positioning the character */
+    position: absolute;
+    bottom: 10px; /* Starts slightly above the bottom edge */
+    
+    /* Animation setup */
+    animation: 
+        walk-cycle 0.8s steps(6) infinite, /* The sprite animation */
+        walk-across-screen 15s linear infinite; /* The movement animation */
+}
+
+/* Animation 1: The walking frames (Sprite Animation) */
+@keyframes walk-cycle {
+    from { background-position: 0 0; }
+    to { background-position: -288px 0; } /* 6 frames * 48px width = -288px */
+}
+
+/* Animation 2: Moving across the screen */
+@keyframes walk-across-screen {
+    0% {
+        left: -50px; /* Start off-screen to the left */
+        transform: scaleX(1); /* Facing right */
+    }
+    49% {
+        left: calc(100% - 50px); /* Move to the far right */
+        transform: scaleX(1); /* Still facing right */
+    }
+    50% {
+        left: calc(100% - 50px); /* Stay at the right */
+        transform: scaleX(-1); /* Instantly flip to face left */
+    }
+    99% {
+        left: -50px; /* Move back to the far left */
+        transform: scaleX(-1); /* Still facing left */
+    }
+    100% {
+        left: -50px; /* Stay at the left */
+        transform: scaleX(1); /* Flip back to face right for the next loop */
+    }
+}

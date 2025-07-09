@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erika Guido - Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Library CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <a href="#" class="nav-logo"><h1>Erika Guido</h1></a>
+        <ul class="nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        
+        <!-- ==> NEW: The Hamburger Menu Icon ==> -->
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <button id="theme-switcher" aria-label="Toggle theme">
+            <div class="slider"></div>
+        </button>
+    </nav>
+</header>
+
+    <main>
+        <!-- HERO SECTION (Intro) -->
+        <section class="hero">
+    <div class="hero-content">
+        <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
+        <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
+    </div>
+    
+    <!-- ==> NEW: Pixel Art Character Div ==> -->
+    <div class="pixel-character-container">
+        <div class="pixel-character"></div>
+    </div>
+</section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="about-section">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-image">
+                    <!-- IMPORTANT: Replace with a path to your professional photo -->
+                    <img src="https://via.placeholder.com/400" alt="A professional photo of Erika Guido">
+                </div>
+                <div class="about-text">
+                    <h3>Developer & Designer</h3>
+                    <p>
+                        I'm a passionate and detail-oriented professional with a love for creating clean, intuitive digital experiences. My journey has led me to explore both the logical world of software development and the aesthetic realm of creative design. I thrive on solving complex problems and turning great ideas into beautiful, functional products.
+                    </p>
+                    <p>
+                        When I'm not coding or designing, you can find me exploring new coffee shops, reading a good book, or working on my next personal project.
+                    </p>
+                    <!-- IMPORTANT: Link to your resume PDF file -->
+                    <a href="resume/ErikaGuido_Resume.pdf" download class="btn">Download Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-pills">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript (ES6+)</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-pills">
+                        <span>React.js</span>
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>Sass</span>
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-pills">
+                        <span>Git & GitHub</span>
+                        <span>Figma</span>
+                        <span>Adobe XD</span>
+                        <span>VS Code</span>
+                        <span>Postman</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION (Main Container) -->
+        <section id="projects">
+            <!-- CODING PROJECTS -->
+            <div class="project-subsection">
+                <h2 class="section-title" data-aos="fade-up">Coding Projects</h2>
+                <div class="project-grid" data-aos="fade-up">
+                    <div class="project-card">
+                        <h3>Interactive To-Do App</h3>
+                        <p>A responsive and persistent to-do list application built with vanilla JavaScript.</p>
+                        <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Weather Dashboard</h3>
+                        <p>Fetches real-time weather data from a third-party API and displays it in a clean UI.</p>
+                        <p><strong>Technologies:</strong> React, API, CSS</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRAPHIC DESIGN PROJECTS -->
+            <div class="project-subsection">
+                <h2 class="section-title" data-aos="fade-up">Graphic Design Projects</h2>
+                <div class="project-grid" data-aos="fade-up">
+                    <!-- Design Card 1: Flyer -->
+                    <div class="project-card design-card">
+                        <a href="images/flyer-fullsize.jpg" data-lightbox="designs" data-title="Company Event Flyer - Front and Back">
+                            <img src="images/flyer-thumbnail.jpg" alt="Thumbnail of a company flyer">
+                        </a>
+                        <div class="card-content">
+                            <h3>Event Flyer Design</h3>
+                            <p>A modern flyer designed for a corporate networking event.</p>
+                        </div>
+                    </div>
+                    <!-- Design Card 2: Calling Card -->
+                    <div class="project-card design-card">
+                        <a href="images/callingcard-fullsize.jpg" data-lightbox="designs" data-title="Minimalist Calling Card Mockup">
+                            <img src="images/callingcard-thumbnail.jpg" alt="Thumbnail of a calling card design">
+                        </a>
+                        <div class="card-content">
+                            <h3>Minimalist Calling Card</h3>
+                            <p>Clean and professional business card design using the brand's palette.</p>
+                        </div>
+                    </div>
+                    <!-- Design Card 3: Pamphlet -->
+                    <div class="project-card design-card">
+                        <a href="images/pamphlet-fullsize.jpg" data-lightbox="designs" data-title="Tri-fold Brochure for Product Launch">
+                            <img src="images/pamphlet-thumbnail.jpg" alt="Thumbnail of a pamphlet design">
+                        </a>
+                        <div class="card-content">
+                            <h3>Product Pamphlet</h3>
+                            <p>Tri-fold brochure showcasing a new software product's features.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CONTACT SECTION -->
+        <section id="contact" data-aos="fade-up">
+            <h2>Get In Touch</h2>
+            <p>I'm currently open to new opportunities. Feel free to reach out!</p>
+            <p>Email: <a href="mailto:mserikaguido@gmail.com">mserikaguido@gmail.com</a></p>
+            <p>
+                <a href="#" target="_blank">LinkedIn</a> | 
+                <a href="#" target="_blank">GitHub</a>
+            </p>
+        </section>
+    </main>
+    
+    <!-- Library JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+    <!-- Your Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
