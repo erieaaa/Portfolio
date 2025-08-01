@@ -196,6 +196,7 @@ section:last-of-type { border-bottom: none; }
     overflow: hidden;   /* ==> AND THIS LINE <== */
 }
 
+
 .typing-headline { 
     font-size: clamp(2.5rem, 6vw, 4rem); 
     color: var(--accent-color-light); 
@@ -204,7 +205,10 @@ section:last-of-type { border-bottom: none; }
 
 .hero p { 
     font-size: 1.2rem; 
-    max-width: 600px; 
+    max-width: 100%; /* <-- Use a percentage instead of pixels */
+    margin-left: auto; /* <-- Add these two lines to keep it centered */
+    margin-right: auto;
+    text-align: center;
 }
 
 .cursor { 
@@ -283,36 +287,8 @@ section:last-of-type { border-bottom: none; }
 =================================================================
 */
 
-/* Container to position the character */
-.pixel-character-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Adjust height as needed */
-    overflow: hidden; /* Hides the character when it's off-screen */
-}
 
-.pixel-character {
-    /* Sizing the character */
-    width: 48px;  /* Original frame width (24px) x 2 */
-    height: 48px; /* We're scaling it up to be more visible */
-    
-    /* The sprite sheet image */
-    background-image: url('https://i.imgur.com/JqdYp6n.png');
-    
-    /* Ensures the pixel art stays sharp, not blurry */
-    image-rendering: pixelated;
-    
-    /* Positioning the character */
-    position: absolute;
-    bottom: 10px; /* Starts slightly above the bottom edge */
-    
-    /* Animation setup */
-    animation: 
-        walk-cycle 0.8s steps(6) infinite, /* The sprite animation */
-        walk-across-screen 15s linear infinite; /* The movement animation */
-}
+
 
 /* Animation 1: The walking frames (Sprite Animation) */
 @keyframes walk-cycle {
