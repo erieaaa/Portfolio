@@ -281,3 +281,30 @@ section:last-of-type { border-bottom: none; }
     .typing-headline { font-size: 2rem; }
 }
 
+/* ADD THIS TO THE END OF YOUR style.css FILE */
+
+/* --- Play Icon Overlay for Video Thumbnails --- */
+.design-card a[data-lightbox="videos"]::after {
+    content: '▶'; /* The play symbol */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 80px; /* Aligns the play icon vertically */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Allows clicks to go through to the link */
+}
+
+.design-card a[data-lightbox="videos"]:hover::after {
+    opacity: 1;
+}
