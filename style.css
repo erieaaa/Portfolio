@@ -305,6 +305,25 @@ section:last-of-type { border-bottom: none; }
     pointer-events: none; /* Allows clicks to go through to the link */
 }
 
+
+/* --- Style for Confidential Project Notice --- */
+.confidential-notice {
+    text-align: center;
+    background: var(--card-bg-light);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto; /* Center the box itself */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.confidential-notice p {
+    margin: 0; /* Remove default paragraph margin */
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .design-card a[data-lightbox="videos"]:hover::after {
     opacity: 1;
 }
+
