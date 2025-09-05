@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Erika Guido - Portfolio</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <!-- Library CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 
-    <!-- Your Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,11 +20,11 @@
         <ul class="nav-menu">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#tools">Tools</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         
-        <!-- ==> NEW: The Hamburger Menu Icon ==> -->
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -41,27 +38,24 @@
 </header>
 
     <main>
-    <!-- HERO SECTION (Intro) -->
-<section class="hero">
+    <section class="hero">
+        
     <div class="hero-content">
         <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
         <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
     </div>
     
-    <!-- ==> ADD THIS BACK IN <== -->
     <div class="pixel-character-container">
         <div class="pixel-character"></div>
     </div>
 </section>
     
 
-        <!-- ABOUT ME SECTION -->
         <section id="about" class="about-section">
             <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="about-content" data-aos="fade-up" data-aos-delay="100">
                 <div class="about-image">
-                    <!-- IMPORTANT: Replace with a path to your professional photo -->
-                    <img src="Me.jpg" alt="A professional photo of Erika Guido">
+                    <img src="Me.jpg" alt="A professional photo of Erika Guido" id="about-img">
                 </div>
                 <div class="about-text">
                     <h3>Developer & Designer</h3>
@@ -71,18 +65,14 @@
                     <p>
 I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.
                     </p>
-                    <!-- IMPORTANT: Link to your resume PDF file -->
                     <a href="https://drive.google.com/uc?export=download&id=1-ubBqAMcvYckUJayG0b8SxPBOyMvKdH9" download class="btn">Download Resume</a>
                 </div>
             </div>
         </section>
 
-<!-- SKILLS SECTION -->
 <section id="skills" class="skills-section">
     <h2 class="section-title" data-aos="fade-up">My Skills & Expertise</h2>
     <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
-        
-        <!-- Category 1: Your Core Specialization -->
         <div class="skill-category">
             <h3>Automation & API Integration</h3>
             <div class="skill-pills">
@@ -94,8 +84,6 @@ I'm also someone who’s willing to learn, flexible, and adaptable—whether it�
                 <span>Automated Email Workflows</span>
             </div>
         </div>
-
-        <!-- Category 2: Your Office & Data Proficiency -->
         <div class="skill-category">
             <h3>Office & Data Productivity</h3>
             <div class="skill-pills">
@@ -106,27 +94,146 @@ I'm also someone who’s willing to learn, flexible, and adaptable—whether it�
                 <span>Data Analysis & Reporting</span>
             </div>
         </div>
-
-        <!-- Category 3: Your Modern & Creative Tools -->
         <div class="skill-category">
             <h3>Modern Platforms & Creative Skills</h3>
             <div class="skill-pills">
                 <span>Notion</span>
                 <span>Zapier Integration</span>
                 <span>Graphic Design (Canva)</span>
-                <span>Basic Video Editing</span>
+                <span>Video Editing</span>
+                <span>Social Media Management</span>
                 <span>Python (Basic)</span>
-                <span>Java / C++ (Basic)</span>
             </div>
         </div>
-
     </div>
 </section>
 
-   <!-- PROJECTS SECTION (Main Container) -->
+<section class="tools-section" id="tools">
+  <h2 class="section-title" data-aos="fade-up">Tools I Use</h2>
+
+  <!-- Google Tools -->
+  <h3 class="subsection-title" data-aos="fade-up">Google Tools</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/google-docs.png" alt="Google Docs Icon"><p>Google Docs</p></div>
+        <div class="flip-card-back"><p>Creating and collaborating on text documents in real time.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/google-slides.png" alt="Google Slides Icon"><p>Google Slides</p></div>
+        <div class="flip-card-back"><p>Designing presentations and collaborating seamlessly online.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/google-sheets.png" alt="Google Sheets Icon"><p>Google Sheets</p></div>
+        <div class="flip-card-back"><p>Analyzing, automating, and visualizing complex data sets.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/google-drive.png" alt="Google Drive Icon"><p>Google Drive</p></div>
+        <div class="flip-card-back"><p>Cloud storage for file management and team collaboration.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/google-forms.png" alt="Google Forms Icon"><p>Google Forms</p></div>
+        <div class="flip-card-back"><p>Collecting feedback, creating surveys, and quiz responses efficiently.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Microsoft Office -->
+  <h3 class="subsection-title" data-aos="fade-up">Microsoft Office</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/word.png" alt="MS Word Icon"><p>MS Word</p></div>
+        <div class="flip-card-back"><p>Professional document creation and advanced formatting.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/excel.png" alt="MS Excel Icon"><p>MS Excel</p></div>
+        <div class="flip-card-back"><p>Mastering data analysis with formulas, and pivot tables.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/powerpoint.png" alt="MS PowerPoint Icon"><p>MS PowerPoint</p></div>
+        <div class="flip-card-back"><p>Creating compelling and interactive visual presentations.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Automation & Productivity -->
+  <h3 class="subsection-title" data-aos="fade-up">Automation & Productivity</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/gas.png" alt="Google Apps Script Icon"><p>Google Apps Script</p></div>
+        <div class="flip-card-back"><p>Automating Google Workspace workflows with custom JavaScript code.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/notion.png" alt="Notion Icon"><p>Notion</p></div>
+        <div class="flip-card-back"><p>An all-in-one workspace for docs, tasks, wikis, and databases.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/clickup.png" alt="ClickUp Icon"><p>ClickUp</p></div>
+        <div class="flip-card-back"><p>Powerful project management and team collaboration tool.</p></div>
+      </div>
+    </div>
+    <div class="tool-card flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front"><img src="icons/zapier.png" alt="Zapier Icon"><p>Zapier</p></div>
+        <div class="flip-card-back"><p>Connecting apps and automating workflows without writing code.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design & Editing -->
+  <h3 class="subsection-title" data-aos="fade-up">Design & Editing</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/canva.png" alt="Canva Icon"><p>Canva</p></div><div class="flip-card-back"><p>Creating social graphics, posters, and professional designs quickly.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/photoshop.png" alt="Photoshop Icon"><p>Photoshop</p></div><div class="flip-card-back"><p>Industry-standard for advanced image editing and graphic design.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/illustrator.png" alt="Illustrator Icon"><p>Illustrator</p></div><div class="flip-card-back"><p>The leading tool for vector graphics, logos, and illustrations.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/capcut.png" alt="CapCut Icon"><p>CapCut</p></div><div class="flip-card-back"><p>Fast and intuitive video editing, perfect for social media content.</p></div></div></div>
+  </div>
+
+  <!-- Programming Languages -->
+  <h3 class="subsection-title" data-aos="fade-up">Programming Languages</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>HTML</p></div><div class="flip-card-back"><p>Structuring the web with semantic, accessible markup.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>CSS</p></div><div class="flip-card-back"><p>Styling and laying out web pages for responsive, beautiful designs.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>JavaScript</p></div><div class="flip-card-back"><p>Making websites interactive, dynamic, and user-friendly.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Java</p></div><div class="flip-card-back"><p>Building robust backend systems and enterprise-level applications.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Python</p></div><div class="flip-card-back"><p>Versatile language for automation, data analysis, and AI models.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>C++</p></div><div class="flip-card-back"><p>High-performance language for systems programming and game dev.</p></div></div></div>
+  </div>
+
+  <!-- AI Tools -->
+  <h3 class="subsection-title" data-aos="fade-up">AI Tools</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Gemini</p></div><div class="flip-card-back"><p>Multimodal AI for content creation and intelligent automation.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>ChatGPT</p></div><div class="flip-card-back"><p>Conversational AI assistant for coding, writing, and research.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>ElevenLabs</p></div><div class="flip-card-back"><p>AI-powered text-to-speech for creating realistic, human-like voiceovers.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Descript</p></div><div class="flip-card-back"><p>Intuitive audio/video editing powered by AI transcription.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Claude</p></div><div class="flip-card-back"><p>Advanced AI for analysis, text generation, and complex workflows.</p></div></div></div>
+  </div>
+</section>
+
+
+
+
 <section id="projects">
 
-    <!-- CODING PROJECTS -->
     <div class="project-subsection">
         <h2 class="section-title" data-aos="fade-up">Coding Projects</h2>
         <div class="project-grid" data-aos="fade-up">
@@ -149,74 +256,176 @@ I'm also someone who’s willing to learn, flexible, and adaptable—whether it�
         </div>
     </div>
 
-    <!-- GRAPHIC DESIGN PROJECTS -->
     <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Graphic Design Projects</h2>
+        <h2 class="section-title" data-aos="fade-up">Graphic Design & SMM</h2>
+        
+        <h3 class="subsection-title" data-aos="fade-up">Invitations</h3>
         <div class="project-grid" data-aos="fade-up">
-            
-            <!-- Design Card 1: Graduation Banner (Female) -->
             <div class="project-card design-card">
-                <a href="FemaleCollege.png" data-lightbox="designs" data-title="Graduation Banner for Clarisse Mae Villanueva">
-                    <img src="FemaleCollege.png" alt="Graduation banner for a female college student">
+                <a href="designs/invitation-christening.png" data-lightbox="designs" data-title="Christening Invitation">
+                    <img src="designs/invitation-christening.png" alt="Mermaid-themed christening invitation">
                 </a>
                 <div class="card-content">
-                    <h3>Graduation Tarpaulin</h3>
-                    <p>A celebratory banner for a Computer Science graduate from Laguna State Polytechnic University.</p>
+                    <h3>Christening Invitation</h3>
+                    <p>A whimsical mermaid-themed card for a christening event.</p>
                 </div>
             </div>
-
-            <!-- Design Card 2: Graduation Banner (Male) -->
             <div class="project-card design-card">
-                <a href="MaleCollege.png" data-lightbox="designs" data-title="Graduation Banner for Juan M. Dela Cruz">
-                    <img src="MaleCollege.png" alt="Graduation banner for a male college student">
+                <a href="designs/invitation-wedding.png" data-lightbox="designs" data-title="Elegant Wedding Invitation">
+                    <img src="designs/invitation-wedding.png" alt="Elegant floral wedding invitation">
                 </a>
                 <div class="card-content">
-                    <h3>Graduation Tarpaulin</h3>
-                    <p>A formal banner celebrating an Information Technology graduate from St. Vincent College of Cabuyao.</p>
+                    <h3>Wedding Invitation</h3>
+                    <p>A classic and elegant floral-themed wedding invitation suite.</p>
                 </div>
             </div>
-
-            <!-- Design Card 3: Skin Tint Poster -->
             <div class="project-card design-card">
-                <a href="SkinTint.png" data-lightbox="designs" data-title="AuralBloom Skin Tint Product Poster">
-                    <img src="SkinTint.png" alt="Promotional poster for AuralBloom Skin Tint">
+                <a href="designs/invitation-birthday.png" data-lightbox="designs" data-title="Kids Birthday Invitation">
+                    <img src="designs/invitation-birthday.png" alt="Fun kids birthday party invitation">
                 </a>
                 <div class="card-content">
-                    <h3>Cosmetic Product Poster</h3>
-                    <p>A vibrant promotional poster for a new skin tint product, highlighting its features and price.</p>
+                    <h3>Birthday Invitation</h3>
+                    <p>A fun and colorful design for a children's birthday party.</p>
                 </div>
             </div>
+        </div>
 
-            <!-- Design Card 4: Baby Invitation/Thank You Card -->
+        <h3 class="subsection-title" data-aos="fade-up">Calling Cards</h3>
+        <div class="project-grid" data-aos="fade-up">
             <div class="project-card design-card">
-                <a href="BabyInvitation.png" data-lightbox="designs" data-title="Birthday & Christening Thank You Card">
-                    <img src="BabyInvitation.png" alt="Thank you card for a baby's birthday and christening">
+                <a href="designs/card-minimalist.png" data-lightbox="designs" data-title="Minimalist Business Card">
+                    <img src="designs/card-minimalist.png" alt="Modern and minimal business card design">
                 </a>
                 <div class="card-content">
-                    <h3>Invitation & Thank You Card</h3>
-                    <p>A whimsical mermaid-themed card for a joint birthday and christening event.</p>
+                    <h3>Minimalist Business Card</h3>
+                    <p>A clean, modern business card for a freelance developer.</p>
                 </div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/card-creative.png" data-lightbox="designs" data-title="Creative Agency Card">
+                    <img src="designs/card-creative.png" alt="Vibrant and creative business card">
+                </a>
+                <div class="card-content">
+                    <h3>Creative Agency Card</h3>
+                    <p>A vibrant and colorful card for a creative design agency.</p>
+                </div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/card-corporate.png" data-lightbox="designs" data-title="Corporate Business Card">
+                    <img src="designs/card-corporate.png" alt="Professional corporate business card">
+                </a>
+                <div class="card-content">
+                    <h3>Corporate Business Card</h3>
+                    <p>A professional and elegant card for a corporate executive.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title" data-aos="fade-up">Product Posters</h3>
+        <div class="project-grid" data-aos="fade-up">
+            <div class="project-card design-card"><a href="designs/poster-skintint.png" data-lightbox="designs" data-title="Skin Tint Poster"><img src="designs/poster-skintint.png" alt="Promotional poster for Skin Tint"></a><div class="card-content"><h3>Cosmetic Product Poster</h3><p>A vibrant ad for a new skin tint product.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-coffee.png" data-lightbox="designs" data-title="Coffee Shop Poster"><img src="designs/poster-coffee.png" alt="Poster for a coffee shop"></a><div class="card-content"><h3>Coffee Shop Ad</h3><p>A promotional poster for a new seasonal coffee blend.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-tech.png" data-lightbox="designs" data-title="Tech Gadget Poster"><img src="designs/poster-tech.png" alt="Poster for a new tech gadget"></a><div class="card-content"><h3>Tech Gadget Launch</h3><p>A sleek poster for a new smart watch release.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-event.png" data-lightbox="designs" data-title="Music Event Poster"><img src="designs/poster-event.png" alt="Poster for a music event"></a><div class="card-content"><h3>Music Event Poster</h3><p>An energetic poster design for a local music festival.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-sale.png" data-lightbox="designs" data-title="Fashion Sale Poster"><img src="designs/poster-sale.png" alt="Poster for a fashion sale"></a><div class="card-content"><h3>Fashion Sale Ad</h3><p>A stylish poster announcing a seasonal fashion sale.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-food.png" data-lightbox="designs" data-title="Restaurant Poster"><img src="designs/poster-food.png" alt="Poster for a restaurant"></a><div class="card-content"><h3>Restaurant Special</h3><p>A delicious-looking poster for a restaurant's weekly special.</p></div></div>
+            <div class="project-card design-card"><a href="designs/poster-realestate.png" data-lightbox="designs" data-title="Real Estate Poster"><img src="designs/poster-realestate.png" alt="Poster for real estate"></a><div class="card-content"><h3>Real Estate Ad</h3><p>A professional poster for an open house event.</p></div></div>
+        </div>
+        
+        <h3 class="subsection-title" data-aos="fade-up">Tarpaulin</h3>
+        <div class="project-grid" data-aos="fade-up">
+            <div class="project-card design-card">
+                <a href="designs/tarpaulin-grad1.png" data-lightbox="designs" data-title="Graduation Banner 1">
+                    <img src="designs/tarpaulin-grad1.png" alt="Graduation banner for a female college student">
+                </a>
+                <div class="card-content"><h3>Graduation Tarpaulin</h3><p>A celebratory banner for a Computer Science graduate.</p></div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/tarpaulin-grad2.png" data-lightbox="designs" data-title="Graduation Banner 2">
+                    <img src="designs/tarpaulin-grad2.png" alt="Graduation banner for a male college student">
+                </a>
+                <div class="card-content"><h3>Graduation Tarpaulin</h3><p>A formal banner for an Information Technology graduate.</p></div>
+            </div>
+        </div>
+        
+        <h3 class="subsection-title" data-aos="fade-up">Email Marketing</h3>
+        <div class="project-grid" data-aos="fade-up">
+            <div class="project-card design-card">
+                <a href="designs/email-promo.png" data-lightbox="designs" data-title="Promotional Email Campaign">
+                    <img src="designs/email-promo.png" alt="Promotional email design for a seasonal sale">
+                </a>
+                <div class="card-content"><h3>Promotional Sale Email</h3><p>An engaging email to announce a seasonal e-commerce sale.</p></div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/email-newsletter.png" data-lightbox="designs" data-title="Monthly Newsletter">
+                    <img src="designs/email-newsletter.png" alt="Design for a monthly newsletter">
+                </a>
+                <div class="card-content"><h3>Monthly Newsletter</h3><p>A clean, readable design for a company's monthly newsletter.</p></div>
+            </div>
+        </div>
+
+        <h3 class="subsection-title" data-aos="fade-up">Social Media Management</h3>
+        <div class="project-grid" data-aos="fade-up">
+            <div class="project-card design-card">
+                <a href="designs/smm-feed.png" data-lightbox="designs" data-title="Instagram Feed Layout">
+                    <img src="designs/smm-feed.png" alt="A cohesive Instagram feed layout">
+                </a>
+                <div class="card-content"><h3>Instagram Feed Mockup</h3><p>A cohesive 9-grid Instagram feed layout for a lifestyle brand.</p></div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/smm-story.png" data-lightbox="designs" data-title="Instagram Story Template">
+                    <img src="designs/smm-story.png" alt="Instagram story templates">
+                </a>
+                <div class="card-content"><h3>Instagram Story Templates</h3><p>A set of branded, reusable templates for Instagram Stories.</p></div>
+            </div>
+            <div class="project-card design-card">
+                <a href="designs/smm-post.png" data-lightbox="designs" data-title="Facebook Post Carousel">
+                    <img src="designs/smm-post.png" alt="Facebook carousel post design">
+                </a>
+                <div class="card-content"><h3>Facebook Carousel Ad</h3><p>An informative and eye-catching carousel ad for Facebook.</p></div>
             </div>
         </div>
     </div>
 
-    <!-- VIDEO EDITING PROJECTS -->
     <div class="project-subsection">
         <h2 class="section-title" data-aos="fade-up">Video Editing Projects</h2>
-        <div class="confidential-notice" data-aos="fade-up">
-            <p>Some of my video editing work is confidential and cannot be shared publicly. Please contact me directly if you would like to see samples of my work.</p>
+        <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="project-card design-card">
+                <a href="videos/campaign-video.mp4" data-lightbox="videos" data-title="Brand Awareness Campaign Video">
+                    <img src="thumbnails/campaign-thumb.jpg" alt="Thumbnail for a brand campaign video">
+                </a>
+                <div class="card-content">
+                    <h3>Campaign Video</h3>
+                    <p>An inspiring video for a brand awareness campaign, designed for social media sharing.</p>
+                </div>
+            </div>
+
+            <div class="project-card design-card">
+                <a href="videos/company-process.mp4" data-lightbox="videos" data-title="Company Process Explainer Video">
+                    <img src="thumbnails/process-thumb.jpg" alt="Thumbnail for a company process video">
+                </a>
+                <div class="card-content">
+                    <h3>Company Process</h3>
+                    <p>An animated explainer video simplifying a complex company workflow for new clients.</p>
+                </div>
+            </div>
+            
+            <div class="project-card design-card">
+                <a href="videos/product-demo.mp4" data-lightbox="videos" data-title="Product Commercial Demo">
+                    <img src="thumbnails/demo-thumb.jpg" alt="Thumbnail for a product demo video">
+                </a>
+                <div class="card-content">
+                    <h3>Product Commercial Demo</h3>
+                    <p>A short, engaging commercial demonstrating the key features of a new product.</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
-
-
-<!-- The end of your graphic design section should be right above this -->
-        </section> <!-- This is the closing tag for the main #projects section -->
-                </div>
-            </div>
-        </section>
+</section>
         
-        <!-- CONTACT SECTION -->
         <section id="contact" data-aos="fade-up">
             <h2>Get In Touch</h2>
             <p>I'm currently open to new opportunities. Feel free to reach out!</p>
@@ -227,26 +436,13 @@ I'm also someone who’s willing to learn, flexible, and adaptable—whether it�
             </p>
         </section>
     </main>
-    
-    <!-- Library JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    
-    <!-- Your Custom JavaScript -->
-    <script src="script.js"></script>
+
+    <a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
