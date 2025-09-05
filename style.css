@@ -1,6 +1,6 @@
 /*
 =================================================================
-  Erika Guido's Portfolio - Final Stylesheet V3
+  Erika Guido's Portfolio - Final Stylesheet V4 (With Animations)
 =================================================================
 */
 
@@ -9,7 +9,7 @@
 */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px; /* Prevents the sticky header from covering the section title */
+    scroll-padding-top: 100px;
 }
 
 :root {
@@ -60,7 +60,7 @@ header {
     padding: 1rem 5%;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
     transition: background-color 0.4s ease;
 }
 
@@ -115,43 +115,23 @@ nav {
     width: 100%;
 }
 
-/* ==> NEW: Hamburger Menu Styles ==> */
-.hamburger {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--text-color-light);
-}
+.hamburger { display: none; cursor: pointer; }
+.bar { display: block; width: 25px; height: 3px; margin: 5px auto; transition: all 0.3s ease-in-out; background-color: var(--text-color-light); }
 
 /* 
-  3. SUN/MOON SLIDING TOGGLE SWITCH
+  3. THEME SWITCHER
 */
 #theme-switcher {
     position: relative; width: 54px; height: 28px; background-color: var(--periwinkle);
     border-radius: 20px; border: none; cursor: pointer; transition: background-color 0.4s ease;
 }
 body.dark-mode #theme-switcher { background-color: var(--card-bg-light); }
-#theme-switcher::before, #theme-switcher::after {
-    content: ''; position: absolute; top: 50%; transform: translateY(-50%);
-    font-size: 16px; transition: opacity 0.4s ease;
-}
+#theme-switcher::before, #theme-switcher::after { content: ''; position: absolute; top: 50%; transform: translateY(-50%); font-size: 16px; transition: opacity 0.4s ease; }
 #theme-switcher::before { content: '☀️'; left: 6px; opacity: 1; }
 body.dark-mode #theme-switcher::before { opacity: 0.2; }
 #theme-switcher::after { content: '🌙'; right: 6px; opacity: 0.2; }
 body.dark-mode #theme-switcher::after { opacity: 1; }
-#theme-switcher .slider {
-    position: absolute; top: 3px; left: 4px; width: 22px; height: 22px;
-    background-color: var(--cream); border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-}
+#theme-switcher .slider { position: absolute; top: 3px; left: 4px; width: 22px; height: 22px; background-color: var(--cream); border-radius: 50%; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
 body.dark-mode #theme-switcher .slider { transform: translateX(25px); }
 
 /* 
@@ -160,69 +140,62 @@ body.dark-mode #theme-switcher .slider { transform: translateX(25px); }
 main { padding: 40px 5%; max-width: 1100px; margin: auto; }
 section { padding: 60px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
 section:last-of-type { border-bottom: none; }
+
 .section-title {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 40px;
     color: var(--accent-color-light);
+    position: relative;
+    padding-bottom: 10px;
 }
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: var(--accent-color-light);
-    color: var(--bg-color-light);
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+/* NEW: Animated underline for section titles */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--periwinkle);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateX(-50%) scaleX(0);
 }
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.section-title.is-visible::after {
+    transform: translateX(-50%) scaleX(1);
 }
+
+.btn { display: inline-block; padding: 12px 24px; background-color: var(--accent-color-light); color: var(--bg-color-light); border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
 /* 
   5. SPECIFIC SECTION STYLES
 */
 /* Hero Section */
-.hero { 
-    min-height: 70vh; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-    position: relative; /* ==> ADD THIS LINE <== */
-    overflow: hidden;   /* ==> AND THIS LINE <== */
-}
-
-
-.typing-headline { 
-    font-size: clamp(2.5rem, 6vw, 4rem); 
-    color: var(--accent-color-light); 
-    margin: 0 0 1rem 0; 
-}
-
-.hero p { 
-    font-size: 1.2rem; 
-    max-width: 100%; /* <-- Use a percentage instead of pixels */
-    margin-left: auto; /* <-- Add these two lines to keep it centered */
-    margin-right: auto;
-    text-align: center;
-}
-
-.cursor { 
-    display: inline-block; 
-    background-color: var(--accent-color-light); 
-    animation: blink 1s infinite; 
-}
-
+.hero { min-height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden; }
+.typing-headline { font-size: clamp(2.5rem, 6vw, 4rem); color: var(--accent-color-light); margin: 0 0 1rem 0; }
+.hero p { font-size: 1.2rem; max-width: 100%; margin-left: auto; margin-right: auto; text-align: center; }
+.cursor { display: inline-block; background-color: var(--accent-color-light); animation: blink 1s infinite; }
 @keyframes blink { 50% { background-color: transparent; } }
+
+/* NEW: Pixel character floating animation */
+.pixel-character-container {
+    animation: floatAnimation 4s ease-in-out infinite;
+}
+
+@keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
 
 /* About Me Section */
 .about-content { display: flex; align-items: center; gap: 50px; }
 .about-image { flex-basis: 40%; max-width: 350px; }
-.about-image img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.about-image img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.4s ease-out; will-change: transform; }
 .about-text { flex-basis: 60%; }
 .about-text h3 { font-size: 1.8rem; }
 .about-text p { line-height: 1.7; }
@@ -232,38 +205,55 @@ section:last-of-type { border-bottom: none; }
 .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
 .skill-category h3 { border-bottom: 2px solid var(--accent-color-light); padding-bottom: 10px; margin-bottom: 20px; }
 .skill-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-.skill-pills span {
-    background-color: var(--card-bg-light);
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
+.skill-pills span { background-color: var(--card-bg-light); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
+
+/* Tools Section & Flip Card Effect */
+.tools-section { padding-bottom: 60px; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 40px; justify-items: center; }
+.tool-card.flip-card { background-color: transparent; width: 100%; height: 180px; perspective: 1000px; border: none; padding: 0; box-shadow: none; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 10px; }
+.tool-card.flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+.flip-card-front { background-color: var(--card-bg-light); color: var(--text-color-light); }
+.flip-card-back { background-color: var(--accent-color-light); color: var(--bg-color-light); transform: rotateY(180deg); font-weight: 500; }
+.flip-card-front img { height: 50px; margin-bottom: 15px; }
+.flip-card-front p { font-size: 1rem; font-weight: 700; margin: 0; }
+.flip-card-back p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
 
 /* Projects Section */
 .project-subsection { margin-bottom: 80px; }
+.subsection-title { font-size: 1.8rem; color: var(--accent-color-light); margin-top: 60px; margin-bottom: 20px; border-bottom: 2px solid var(--periwinkle); padding-bottom: 10px; }
+#projects .subsection-title:first-of-type, .tools-section .subsection-title:first-of-type { margin-top: 0; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.project-card {
-    background: var(--card-bg-light); 
-    border-radius: 8px; 
-    border: 1px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.project-card:not(.design-card) {
-    padding: 25px;
-}
-.project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
-.project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; margin-right: 15px; }
+.project-card { background: var(--card-bg-light); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; display: flex; flex-direction: column; position: relative; } /* Added position: relative */
 
-/* Graphic Design Card Specifics */
-.design-card a { display: block; overflow: hidden; position: relative; }
-.design-card img { 
-    width: 100%; height: 220px; object-fit: cover; 
-    display: block; transition: transform 0.3s ease; 
+/* NEW: Glowing border effect */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    padding: 2px;
+    background: conic-gradient(from 180deg at 50% 50%, #98a1bc, #555879, #ded3c4, #98a1bc);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
 }
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:not(.design-card) { padding: 25px; }
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(85, 88, 121, 0.15); }
+.project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; margin-right: 15px; }
+.design-card a { display: block; overflow: hidden; position: relative; }
+.design-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease; }
 .design-card:hover img { transform: scale(1.05); }
 .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column;}
 .card-content h3 { margin-top: 0; }
@@ -273,57 +263,86 @@ section:last-of-type { border-bottom: none; }
 #contact a { color: var(--accent-color-light); text-decoration: none; font-weight: bold; }
 
 /* 
-  6. RESPONSIVE DESIGN
+  6. MISC & INTERACTIVE ELEMENTS
+*/
+/* Play Icon Overlay for Videos */
+.design-card a[data-lightbox="videos"]::after { content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 48px; background-color: rgba(0, 0, 0, 0.5); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; line-height: 80px; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+.design-card a[data-lightbox="videos"]:hover::after { opacity: 1; }
+
+/* NEW: Scroll to Top Button */
+#scrollTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    background-color: var(--accent-color-light);
+    color: var(--bg-color-light);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#scrollTopBtn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+/* 
+  7. RESPONSIVE DESIGN
 */
 @media (max-width: 768px) {
-    .nav-menu { display: none; } /* On mobile, this menu will be hidden. A hamburger menu would replace it. */
+    .hamburger { display: block; }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-menu { position: fixed; left: -100%; top: 80px; flex-direction: column; background-color: var(--card-bg-light); width: 100%; text-align: center; transition: 0.3s; box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05); }
+    .nav-menu.active { left: 0; display: flex; }
+    .nav-menu li { padding: 1rem 0; }
     .about-content { flex-direction: column; }
     .typing-headline { font-size: 2rem; }
 }
+/* ADD THIS TO THE VERY END OF YOUR style.css FILE */
 
-/* ADD THIS TO THE END OF YOUR style.css FILE */
-
-/* --- Play Icon Overlay for Video Thumbnails --- */
-.design-card a[data-lightbox="videos"]::after {
-    content: '▶'; /* The play symbol */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 48px;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 80px;
-    height: 80px;
+/* --- Cursor Trail --- */
+.cursor-trail {
+    position: fixed; /* Use 'fixed' so it stays relative to the screen, not the page scroll */
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, var(--periwinkle) 30%, transparent 80%);
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 80px; /* Aligns the play icon vertically */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; /* Allows clicks to go through to the link */
+    pointer-events: none; /* Allows you to click "through" the trail elements */
+    transform: translate(-50%, -50%);
+    animation: fadeOut 0.5s linear forwards;
+    z-index: 9999; /* Ensures it's on top of everything */
+    top: 0;
+    left: 0;
 }
 
-
-/* --- Style for Confidential Project Notice --- */
-.confidential-notice {
-    text-align: center;
-    background: var(--card-bg-light);
-    padding: 30px;
-    border-radius: 8px;
-    max-width: 700px;
-    margin: 0 auto; /* Center the box itself */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2.5);
+    }
 }
-
-.confidential-notice p {
-    margin: 0; /* Remove default paragraph margin */
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.design-card a[data-lightbox="videos"]:hover::after {
-    opacity: 1;
-}
-
