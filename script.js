@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. THEME SWITCHER
     const themeSwitcher = document.getElementById('theme-switcher');
-    const body = document.body; // The one and only declaration of 'body'
+    const body = document.body; // The one, correct declaration of 'body'
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         body.classList.add(currentTheme);
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // 12. POP-UP CONTACT FORM LOGIC
-    // THIS IS THE FIX: The duplicate 'const body' was removed from here.
+    // const body = document.body; // THIS LINE WAS THE ERROR AND HAS BEEN REMOVED.
     const hireBtn = document.querySelector("#hireBtn");
     const closeBtns = document.querySelectorAll("#closeBtn");
     const contactForm = document.getElementById('popup-contact-form');
