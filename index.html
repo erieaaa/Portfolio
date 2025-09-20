@@ -10,7 +10,6 @@
     
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-    <!-- Boxicons for form icons -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,95 +24,60 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-
-        <button id="theme-switcher" aria-label="Toggle theme">
-            <div class="slider"></div>
-        </button>
+        <div class="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        <button id="theme-switcher" aria-label="Toggle theme"><div class="slider"></div></button>
     </nav>
 </header>
-
-    <main>
-        <section class="hero">
-            <!-- Hero Content -->
-        </section>
-    
-        <section id="about" class="about-section">
-            <!-- About Me Content -->
-        </section>
-
-        <section id="skills" class="skills-section">
-            <!-- Skills Content -->
-        </section>
-
-        <section class="tools-section" id="tools">
-             <!-- Tools Content -->
-        </section>
-
-        <section id="projects">
-            <!-- All Project Content -->
-        </section>
-        
-        <section id="contact" data-aos="fade-up">
-            <div class="contact-profile">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Have a project in mind or just want to say hello? Let's connect.</p>
-                <div id="hireBtn" class="btn contact-button">
-                    <i class='bx bxs-envelope'></i>
-                    <button>Send a Message</button>
-                </div>
-                 <div class="contact-links">
-                    <p>
-                        <a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | 
-                        <a href="https://github.com/erieaaa" target="_blank">GitHub</a>
-                    </p>
-                </div>
-            </div>
-    
-            <div class="popup-outer">
-                <div class="popup-box">
-                    <i id="closeBtn" class='bx bx-x close'></i>
-                    <div class="form-title">
-                        <h3>Send me a message</h3>
-                    </div>
-                    <form id="popup-contact-form">
-                        <div class="form-group">
-                            <label for="popup-email">Your Email</label>
-                            <input type="email" id="popup-email" name="email" required placeholder="name@example.com">
-                        </div>
-                        <div class="form-group">
-                             <label for="popup-message">Your Message</label>
-                            <textarea id="popup-message" name="message" spellcheck="false" required placeholder="Enter your message..."></textarea>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" id="closeBtn" class="cancel">Cancel</button>
-                            <button type="submit" class="send">Send</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
-
-    <div id="video-modal" class="video-modal-overlay">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-container">
-                <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
+            <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
+        </div>
+        <div class="pixel-character-container"><div class="pixel-character"></div></div>
+    </section>
+    <section id="about" class="about-section">
+        <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-image"><img src="Me.jpeg" alt="A professional photo of Erika Guido" id="about-img"></div>
+            <div class="about-text">
+                <h3>Developer & Designer</h3>
+                <p>I'm a passionate and detail-oriented professional with a love for creating clean, intuitive digital experiences. My journey has led me to explore both the logical world of software development and the aesthetic realm of creative design. I enjoy solving real-world problems and turning good ideas into functional, thoughtful products.</p>
+                <p>I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.</p>
+                <div class="magnetic-wrapper"><a href="https://drive.google.com/uc?export=download&id=1-ubBqAMcvYckUJayG0b8SxPBOyMvKdH9" download class="btn magnetic-button">Download Resume</a></div>
             </div>
         </div>
-    </div>
+    </section>
+    <section id="skills" class="skills-section"><!-- Skills content --></section>
+    <section class="tools-section" id="tools"><!-- Tools content --></section>
+    <section id="projects"><!-- Projects content --></section>
+    <section id="contact" data-aos="fade-up">
+        <div class="contact-profile">
+            <h2 class="section-title">Get In Touch</h2>
+            <p>Have a project in mind or just want to say hello? Let's connect.</p>
+            <div id="hireBtn" class="btn contact-button"><i class='bx bxs-envelope'></i><button>Send a Message</button></div>
+            <div class="contact-links"><p><a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | <a href="https://github.com/erieaaa" target="_blank">GitHub</a></p></div>
+        </div>
+        <div class="popup-outer">
+            <div class="popup-box">
+                <i id="closeBtn" class='bx bx-x close'></i>
+                <div class="form-title"><h3>Send me a message</h3></div>
+                <form id="popup-contact-form">
+                    <div class="form-group"><label for="popup-email">Your Email</label><input type="email" id="popup-email" name="email" required placeholder="name@example.com"></div>
+                    <div class="form-group"><label for="popup-message">Your Message</label><textarea id="popup-message" name="message" spellcheck="false" required placeholder="Enter your message..."></textarea></div>
+                    <div class="form-buttons"><button type="button" id="closeBtn" class="cancel">Cancel</button><button type="submit" class="send">Send</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+<a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script src="script.js"></script>
+<div id="video-modal" class="video-modal-overlay">
+    <div class="video-modal-content"><span class="video-modal-close">&times;</span><div class="video-container"><iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div></div>
+</div>
 </body>
 </html>
