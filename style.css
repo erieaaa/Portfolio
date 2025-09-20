@@ -167,7 +167,7 @@ section:last-of-type { border-bottom: none; }
     transform: translateX(-50%) scaleX(1);
 }
 
-.btn { display: inline-block; padding: 12px 24px; background-color: var(--accent-color-light); color: var(--bg-color-light); border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.btn { display: inline-block; padding: 12px 24px; background-color: var(--accent-color-light); color: var(--card-bg-light); border-radius: 5px; text-decoration: none; font-weight: bold; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
 
 /* 
@@ -226,22 +226,9 @@ section:last-of-type { border-bottom: none; }
 .project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(85, 88, 121, 0.15); }
 .project-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 8px; padding: 2px; background: conic-gradient(from 180deg at 50% 50%, #98a1bc, #555879, #ded3c4, #98a1bc); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; opacity: 0; transition: opacity 0.4s ease; }
 .project-card:hover::before { opacity: 1; }
-
-/* Styles for cards WITHOUT images */
-.project-card:not(.design-card) {
-    padding: 25px;
-}
-.project-card:not(.design-card) .project-links {
-    margin-top: auto; /* Pushes the link to the bottom */
-    padding-top: 15px; /* Adds some space above the link */
-}
-.project-card:not(.design-card) .project-links a {
-    color: var(--accent-color-light);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Styles for cards WITH images */
+.project-card:not(.design-card) { padding: 25px; }
+.project-card:not(.design-card) .project-links { margin-top: auto; padding-top: 15px; }
+.project-card:not(.design-card) .project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; }
 .design-card a { display: block; overflow: hidden; position: relative; }
 .design-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease; }
 .design-card:hover img { transform: scale(1.05); }
@@ -255,24 +242,25 @@ section:last-of-type { border-bottom: none; }
 }
 #contact p {
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 20px auto;
     line-height: 1.7;
 }
-.contact-cta {
-    margin: 30px 0;
+.contact-email-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-color-light);
+    text-decoration: none;
+    transition: transform 0.2s ease;
 }
-.email-link {
-    margin-top: 15px;
-    font-size: 1.1rem;
+.contact-email-link:hover {
+    transform: scale(1.05);
 }
-.contact-links {
-    margin-top: 20px;
-}
-#contact a { 
-    color: var(--accent-color-light); 
-    text-decoration: none; 
+.contact-links a { 
+    color: var(--text-color-light); 
     font-weight: bold; 
+    text-decoration: none; 
 }
 
 /* 
@@ -296,7 +284,7 @@ section:last-of-type { border-bottom: none; }
 .design-card a.video-link:hover::after { opacity: 1; }
 
 #scrollTopBtn {
-    position: fixed; bottom: 30px; right: 30px; z-index: 999; background-color: var(--accent-color-light); color: var(--bg-color-light);
+    position: fixed; bottom: 30px; right: 30px; z-index: 999; background-color: var(--accent-color-light); color: var(--card-bg-light);
     border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center;
     text-decoration: none; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
