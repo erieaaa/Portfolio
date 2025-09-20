@@ -128,26 +128,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. CUSTOM VIDEO MODAL
+    // 9. CUSTOM VIDEO MODAL (CORRECTED LOGIC)
     const videoModal = document.getElementById('video-modal');
     if (videoModal) {
         const modalIframe = document.getElementById('video-iframe');
         const closeModalBtn = document.querySelector('.video-modal-close');
         
         document.querySelectorAll('.video-link').forEach(link => {
-            if (!link.hasAttribute('data-lightbox')) {
+            // THIS IS THE FIX: Only apply the pop-up logic to Google Drive links
+            if (link.href.includes('drive.google.com')) {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); 
+                    event.preventDefault(); // Stop the link from opening a new tab
                     const videoUrl = this.getAttribute('href');
                     modalIframe.setAttribute('src', videoUrl);
                     videoModal.style.display = 'block';
                 });
             }
+            // All other links (like your mailto:) will now work normally.
         });
 
         const closeModal = () => {
             videoModal.style.display = 'none';
-            modalIframe.setAttribute('src', '');
+            modalIframe.setAttribute('src', ''); // Stop video from playing
         };
 
         closeModalBtn.addEventListener('click', closeModal);
