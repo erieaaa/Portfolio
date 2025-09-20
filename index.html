@@ -39,15 +39,17 @@
 </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
-                <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
-            </div>
-            <div class="pixel-character-container">
-                <div class="pixel-character"></div>
-            </div>
-        </section>
+    <section class="hero">
+        
+    <div class="hero-content">
+        <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
+        <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
+    </div>
+    
+    <div class="pixel-character-container">
+        <div class="pixel-character"></div>
+    </div>
+</section>
     
         <section id="about" class="about-section">
             <h2 class="section-title" data-aos="fade-up">About Me</h2>
@@ -61,7 +63,7 @@
                         I'm a passionate and detail-oriented professional with a love for creating clean, intuitive digital experiences. My journey has led me to explore both the logical world of software development and the aesthetic realm of creative design. I enjoy solving real-world problems and turning good ideas into functional, thoughtful products.
                     </p>
                     <p>
-                        I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.
+I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.
                     </p>
                     <div class="magnetic-wrapper">
                         <a href="https://drive.google.com/uc?export=download&id=1-ubBqAMcvYckUJayG0b8SxPBOyMvKdH9" download class="btn magnetic-button">Download Resume</a>
@@ -70,74 +72,56 @@
             </div>
         </section>
 
-        <section id="skills" class="skills-section">
-            <!-- Your Skills Section Code Here -->
-        </section>
-
-        <section class="tools-section" id="tools">
-             <!-- Your Tools Section Code Here -->
-        </section>
-
-        <section id="projects">
-            <!-- All your Project Subsections Code Here -->
-        </section>
-        
-        <section id="contact" data-aos="fade-up">
-            <div class="contact-profile">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Have a project in mind or just want to say hello? Let's connect.</p>
-                <div id="hireBtn" class="btn contact-button">
-                    <i class='bx bxs-envelope'></i>
-                    <button>Send a Message</button>
-                </div>
-                 <div class="contact-links">
-                    <p>
-                        <a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | 
-                        <a href="https://github.com/erieaaa" target="_blank">GitHub</a>
-                    </p>
-                </div>
+<section id="skills" class="skills-section">
+    <h2 class="section-title" data-aos="fade-up">My Skills & Expertise</h2>
+    <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+        <div class="skill-category">
+            <h3>Automation & API Integration</h3>
+            <div class="skill-pills">
+                <span>Google Apps Script</span>
+                <span>API Integration</span>
+                <span>Google Drive Automation</span>
+                <span>Google Sheets Data Manipulation</span>
+                <span>Google Docs & Slides Automation</span>
+                <span>Automated Email Workflows</span>
             </div>
-    
-            <!-- This is the hidden pop-up form -->
-            <div class="popup-outer">
-                <div class="popup-box">
-                    <i id="closeBtn" class='bx bx-x close'></i>
-                    <div class="form-title">
-                        <h3>Send me a message</h3>
-                    </div>
-                    <form id="popup-contact-form">
-                        <div class="form-group">
-                            <label for="popup-email">Your Email</label>
-                            <input type="email" id="popup-email" name="email" required placeholder="name@example.com">
-                        </div>
-                        <div class="form-group">
-                             <label for="popup-message">Your Message</label>
-                            <textarea id="popup-message" name="message" spellcheck="false" required placeholder="Enter your message..."></textarea>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" id="closeBtn" class="cancel">Cancel</button>
-                            <button type="submit" class="send">Send</button>
-                        </div>
-                    </form>
-                </div>
+        </div>
+        <div class="skill-category">
+            <h3>Office & Data Productivity</h3>
+            <div class="skill-pills">
+                <span>Microsoft Excel (Proficient)</span>
+                <span>Microsoft Word (Proficient)</span>
+                <span>Microsoft PowerPoint (Proficient)</span>
+                <span>MS Access (Basic)</span>
+                <span>Data Analysis & Reporting</span>
             </div>
-        </section>
-    </main>
-
-    <a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
-
-    <div id="video-modal" class="video-modal-overlay">
-        <div class="video-modal-content">
-            <span class="video-modal-close">&times;</span>
-            <div class="video-container">
-                <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="skill-category">
+            <h3>Modern Platforms & Creative Skills</h3>
+            <div class="skill-pills">
+                <span>Notion</span>
+                <span>Zapier Integration</span>
+                <span>Graphic Design (Canva)</span>
+                <span>Video Editing</span>
+                <span>Social Media Management</span>
+                <span>Python (Basic)</span>
             </div>
         </div>
     </div>
-</body>
-</html>
+</section>
+
+<section class="tools-section" id="tools">
+  <h2 class="section-title" data-aos="fade-up">Tools I Use</h2>
+  <!-- Google Tools -->
+  <h3 class="subsection-title" data-aos="fade-up">Google Tools</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-docs.png" alt="Google Docs Icon"><p>Google Docs</p></div><div class="flip-card-back"><p>Creating and collaborating on text documents in real time.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-slides.png" alt="Google Slides Icon"><p>Google Slides</p></div><div class="flip-card-back"><p>Designing presentations and collaborating seamlessly online.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-sheets.png" alt="Google Sheets Icon"><p>Google Sheets</p></div><div class="flip-card-back"><p>Analyzing, automating, and visualizing complex data sets.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-drive.png" alt="Google Drive Icon"><p>Google Drive</p></div><div class="flip-card-back"><p>Cloud storage for file management and team collaboration.</p></div></div></div>
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-forms.png" alt="Google Forms Icon"><p>Google Forms</p></div><div class="flip-card-back"><p>Collecting feedback, creating surveys, and quiz responses efficiently.</p></div></div></div>
+  </div>
+  <!-- Microsoft Office -->
+  <h3 class="subsection-title" data-aos="fade-up">Microsoft Office</h3>
+  <div class="tools-grid" data-aos="fade-up">
+    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-
