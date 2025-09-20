@@ -323,3 +323,8 @@ section:last-of-type { border-bottom: none; }
 .video-modal-close:hover { color: #ccc; }
 .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+/* Add this to the end of your style.css */
+.email-link {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
