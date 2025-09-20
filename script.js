@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); // Stop the default form submission
 
             // --- IMPORTANT: PASTE YOUR WEB APP URL HERE ---
-            const scriptURL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyB2LIOd048NAela6PxQtM7UFah9i-giu1Ptev-wQE2fDWkJbRD3zQmi7_AP2r9CrE6/exec'; 
             const form = e.target;
             const sendButton = form.querySelector('.send');
             
@@ -257,5 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
 
 
