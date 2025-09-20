@@ -10,7 +10,8 @@
     
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
-
+    <!-- Boxicons for form icons -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -38,250 +39,81 @@
 </header>
 
     <main>
-    <section class="hero">
-        
-    <div class="hero-content">
-        <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
-        <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
-    </div>
-    
-    <div class="pixel-character-container">
-        <div class="pixel-character"></div>
-    </div>
-</section>
+        <section class="hero">
+            <!-- Hero Content -->
+        </section>
     
         <section id="about" class="about-section">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
-                <div class="about-image">
-                    <img src="Me.jpeg" alt="A professional photo of Erika Guido" id="about-img">
+            <!-- About Me Content -->
+        </section>
+
+        <section id="skills" class="skills-section">
+            <!-- Skills Content -->
+        </section>
+
+        <section class="tools-section" id="tools">
+             <!-- Tools Content -->
+        </section>
+
+        <section id="projects">
+            <!-- All Project Content -->
+        </section>
+        
+        <section id="contact" data-aos="fade-up">
+            <div class="contact-profile">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>Have a project in mind or just want to say hello? Let's connect.</p>
+                <div id="hireBtn" class="btn contact-button">
+                    <i class='bx bxs-envelope'></i>
+                    <button>Send a Message</button>
                 </div>
-                <div class="about-text">
-                    <h3>Developer & Designer</h3>
+                 <div class="contact-links">
                     <p>
-                        I'm a passionate and detail-oriented professional with a love for creating clean, intuitive digital experiences. My journey has led me to explore both the logical world of software development and the aesthetic realm of creative design. I enjoy solving real-world problems and turning good ideas into functional, thoughtful products.
+                        <a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | 
+                        <a href="https://github.com/erieaaa" target="_blank">GitHub</a>
                     </p>
-                    <p>
-I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.
-                    </p>
-                    <div class="magnetic-wrapper">
-                        <a href="https://drive.google.com/uc?export=download&id=1-ubBqAMcvYckUJayG0b8SxPBOyMvKdH9" download class="btn magnetic-button">Download Resume</a>
+                </div>
+            </div>
+    
+            <div class="popup-outer">
+                <div class="popup-box">
+                    <i id="closeBtn" class='bx bx-x close'></i>
+                    <div class="form-title">
+                        <h3>Send me a message</h3>
                     </div>
+                    <form id="popup-contact-form">
+                        <div class="form-group">
+                            <label for="popup-email">Your Email</label>
+                            <input type="email" id="popup-email" name="email" required placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                             <label for="popup-message">Your Message</label>
+                            <textarea id="popup-message" name="message" spellcheck="false" required placeholder="Enter your message..."></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" id="closeBtn" class="cancel">Cancel</button>
+                            <button type="submit" class="send">Send</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
-
-<section id="skills" class="skills-section">
-    <h2 class="section-title" data-aos="fade-up">My Skills & Expertise</h2>
-    <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-category">
-            <h3>Automation & API Integration</h3>
-            <div class="skill-pills">
-                <span>Google Apps Script</span>
-                <span>API Integration</span>
-                <span>Google Drive Automation</span>
-                <span>Google Sheets Data Manipulation</span>
-                <span>Google Docs & Slides Automation</span>
-                <span>Automated Email Workflows</span>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h3>Office & Data Productivity</h3>
-            <div class="skill-pills">
-                <span>Microsoft Excel (Proficient)</span>
-                <span>Microsoft Word (Proficient)</span>
-                <span>Microsoft PowerPoint (Proficient)</span>
-                <span>MS Access (Basic)</span>
-                <span>Data Analysis & Reporting</span>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h3>Modern Platforms & Creative Skills</h3>
-            <div class="skill-pills">
-                <span>Notion</span>
-                <span>Zapier Integration</span>
-                <span>Graphic Design (Canva)</span>
-                <span>Video Editing</span>
-                <span>Social Media Management</span>
-                <span>Python (Basic)</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="tools-section" id="tools">
-  <h2 class="section-title" data-aos="fade-up">Tools I Use</h2>
-  <!-- Google Tools -->
-  <h3 class="subsection-title" data-aos="fade-up">Google Tools</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-docs.png" alt="Google Docs Icon"><p>Google Docs</p></div><div class="flip-card-back"><p>Creating and collaborating on text documents in real time.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-slides.png" alt="Google Slides Icon"><p>Google Slides</p></div><div class="flip-card-back"><p>Designing presentations and collaborating seamlessly online.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-sheets.png" alt="Google Sheets Icon"><p>Google Sheets</p></div><div class="flip-card-back"><p>Analyzing, automating, and visualizing complex data sets.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-drive.png" alt="Google Drive Icon"><p>Google Drive</p></div><div class="flip-card-back"><p>Cloud storage for file management and team collaboration.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-forms.png" alt="Google Forms Icon"><p>Google Forms</p></div><div class="flip-card-back"><p>Collecting feedback, creating surveys, and quiz responses efficiently.</p></div></div></div>
-  </div>
-  <!-- Microsoft Office -->
-  <h3 class="subsection-title" data-aos="fade-up">Microsoft Office</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/word.png" alt="MS Word Icon"><p>MS Word</p></div><div class="flip-card-back"><p>Professional document creation and advanced formatting.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/excel.png" alt="MS Excel Icon"><p>MS Excel</p></div><div class="flip-card-back"><p>Mastering data analysis with formulas, and pivot tables.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/powerpoint.png" alt="MS PowerPoint Icon"><p>MS PowerPoint</p></div><div class="flip-card-back"><p>Creating compelling and interactive visual presentations.</p></div></div></div>
-  </div>
-  <!-- Automation & Productivity -->
-  <h3 class="subsection-title" data-aos="fade-up">Automation & Productivity</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/gas.png" alt="Google Apps Script Icon"><p>Google Apps Script</p></div><div class="flip-card-back"><p>Automating Google Workspace workflows with custom JavaScript code.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/notion.png" alt="Notion Icon"><p>Notion</p></div><div class="flip-card-back"><p>An all-in-one workspace for docs, tasks, wikis, and databases.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/clickup.png" alt="ClickUp Icon"><p>ClickUp</p></div><div class="flip-card-back"><p>Powerful project management and team collaboration tool.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Make.com</p></div><div class="flip-card-back"><p>Visually build, manage, and automate workflows.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/zapier.png" alt="Zapier Icon"><p>Zapier</p></div><div class="flip-card-back"><p>Connecting apps and automating workflows without writing code.</p></div></div></div>
-  </div>
-  <!-- Design & Editing -->
-  <h3 class="subsection-title" data-aos="fade-up">Design & Editing</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/canva.png" alt="Canva Icon"><p>Canva</p></div><div class="flip-card-back"><p>Creating social graphics, posters, and professional designs quickly.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/photoshop.png" alt="Photoshop Icon"><p>Photoshop</p></div><div class="flip-card-back"><p>Industry-standard for advanced image editing and graphic design.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/illustrator.png" alt="Illustrator Icon"><p>Illustrator</p></div><div class="flip-card-back"><p>The leading tool for vector graphics, logos, and illustrations.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/capcut.png" alt="CapCut Icon"><p>CapCut</p></div><div class="flip-card-back"><p>Fast and intuitive video editing, perfect for social media content.</p></div></div></div>
-  </div>
-  <!-- Programming Languages -->
-  <h3 class="subsection-title" data-aos="fade-up">Programming Languages</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>HTML</p></div><div class="flip-card-back"><p>Structuring the web with semantic, accessible markup.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>CSS</p></div><div class="flip-card-back"><p>Styling and laying out web pages for responsive, beautiful designs.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>JavaScript</p></div><div class="flip-card-back"><p>Making websites interactive, dynamic, and user-friendly.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Java</p></div><div class="flip-card-back"><p>Building robust backend systems and enterprise-level applications.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Python</p></div><div class="flip-card-back"><p>Versatile language for automation, data analysis, and AI models.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>C++</p></div><div class="flip-card-back"><p>High-performance language for systems programming and game dev.</p></div></div></div>
-  </div>
-  <!-- AI Tools -->
-  <h3 class="subsection-title" data-aos="fade-up">AI Tools</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Gemini</p></div><div class="flip-card-back"><p>Multimodal AI for content creation and intelligent automation.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>OpenAI</p></div><div class="flip-card-back"><p>Powerful AI models (like GPT) for coding, writing, and research.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Perplexity</p></div><div class="flip-card-back"><p>Conversational search engine for accurate, cited answers.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>ElevenLabs</p></div><div class="flip-card-back"><p>AI-powered text-to-speech for creating realistic, human-like voiceovers.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Descript</p></div><div class="flip-card-back"><p>Intuitive audio/video editing powered by AI transcription.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Claude</p></div><div class="flip-card-back"><p>Advanced AI for analysis, text generation, and complex workflows.</p></div></div></div>
-  </div>
-</section>
-
-<section id="projects">
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Coding Projects</h2>
-        <div class="project-grid" data-aos="fade-up">
-            <div class="project-card">
-                <h3>Interactive To-Do App</h3>
-                <p>A responsive and persistent to-do list application.</p>
-                <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
-                <div class="project-links">
-                    <a href="https://erieaaa.github.io/Todo-App/" target="_blank">Live Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Weather Dashboard</h3>
-                <p>Fetches real-time weather data from a third-party API and displays it in a clean UI.</p>
-                <p><strong>Technologies:</strong> React, API, CSS</p>
-                <div class="project-links">
-                    <a href="https://erieaaa.github.io/weather/" target="_blank">Live Demo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Automation & Scripting Demos</h2>
-        <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1qawoqSjkrlH6Yp9hpvEbesEGLokAotT3/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/translator-thumb.png" alt="Thumbnail for Google Sheets AI Translator video demo">
-                </a>
-                <div class="card-content"><h3>Google Sheets AI Auto-Translator</h3><p>A custom script that uses an AI API to automatically translate text across multiple languages directly within a Google Sheet.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1U4vSZB8tmjcns8bhKhDUDXgohNZa8m51/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/email-thumb.png" alt="Thumbnail for Google Sheets AI Email Generator video demo">
-                </a>
-                <div class="card-content"><h3>Google Sheets AI Email Generator</h3><p>An automation tool that takes prompts from a spreadsheet and uses AI to generate complete, professional emails via Google Apps Script.</p></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Graphic Design Samples</h2>
-        <h3 class="subsection-title" data-aos="fade-up">Product Posters</h3>
-        <div class="project-grid" data-aos="fade-up">
-            <div class="project-card design-card"><a href="designs/facial.png" data-lightbox="designs" data-title="Hydrating Facial Serum Poster"><img src="designs/facial.png" alt="Promotional poster for a facial serum"></a><div class="card-content"><h3>Facial Serum Ad</h3><p>A clean and modern poster for a hydrating facial serum.</p></div></div>
-            <div class="project-card design-card"><a href="designs/poster-coffee.png" data-lightbox="designs" data-title="Cold Brew Vanilla Coffee Poster"><img src="designs/poster-coffee.png" alt="Poster for a cold brew coffee"></a><div class="card-content"><h3>Cold Brew Coffee Ad</h3><p>A rustic and appealing poster for a cold brew vanilla coffee.</p></div></div>
-            <div class="project-card design-card"><a href="designs/banana.png" data-lightbox="designs" data-title="Banana Cream Drink Poster"><img src="designs/banana.png" alt="Poster for a banana cream drink"></a><div class="card-content"><h3>Banana Cream Drink Ad</h3><p>A bright and cheerful ad for a banana cream flavored drink.</p></div></div>
-            <div class="project-card design-card"><a href="designs/java.png" data-lightbox="designs" data-title="Java Chip Ice Blended Poster"><img src="designs/java.png" alt="Poster for a Java Chip frappe"></a><div class="card-content"><h3>Java Chip Frappe Ad</h3><p>A tempting poster for a Java Chip ice blended beverage.</p></div></div>
-            <div class="project-card design-card"><a href="designs/sprite.png" data-lightbox="designs" data-title="Sprite Drink Poster"><img src="designs/sprite.png" alt="Poster for a can of Sprite"></a><div class="card-content"><h3>Sprite Refreshment Ad</h3><p>A cool and refreshing poster design for Sprite.</p></div></div>
-            <div class="project-card design-card"><a href="designs/pumpkin.png" data-lightbox="designs" data-title="Pumpkin Spice Latte Poster"><img src="designs/pumpkin.png" alt="Poster for a Pumpkin Spice Latte"></a><div class="card-content"><h3>Pumpkin Spice Latte Ad</h3><p>A cozy, seasonal poster for a Pumpkin Spice Latte.</p></div></div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Video Editing Samples</h2>
-        <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1TuK98l0tUcM9oeUIHhrt9qOzHvn16mCr/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/campaign-thumb.png" alt="Thumbnail for a brand campaign video">
-                </a>
-                <div class="card-content"><h3>Campaign Video</h3><p>An inspiring video for a brand awareness campaign, designed for social media.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1ksumOx_pCagSCWsEtEqkx_YIP0CE1DPC/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/process-thumb.png" alt="Thumbnail for a company process video">
-                </a>
-                <div class="card-content"><h3>Company Process</h3><p>An animated explainer video simplifying a complex company workflow.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1UuyELoVmOixADoOyxwuQVx6ZwH1q-cad/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/demo-thumb.png" alt="Thumbnail for a product demo video">
-                </a>
-                <div class="card-content"><h3>Product Commercial</h3><p>A short, engaging commercial demonstrating key product features.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-        
-<section id="contact" data-aos="fade-up">
-    <h2 class="section-title">Get In Touch</h2>
-    <p>
-        I'm currently open to new opportunities and would love to hear from you.
-        <br>
-        The best way to reach me is by email.
-    </p>
-    
-    <div class="contact-email-link">
-        <a href="mailto:mserikaguido@gmail.com">mserikaguido@gmail.com</a>
-    </div>
-    
-    <div class="contact-links">
-        <p>
-            <a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/erieaaa" target="_blank">GitHub</a>
-        </p>
-    </div>
-</section>
     </main>
 
     <a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
 
-<!-- Video Modal HTML - Add this before </body> -->
-<div id="video-modal" class="video-modal-overlay">
-    <div class="video-modal-content">
-        <span class="video-modal-close">&times;</span>
-        <div class="video-container">
-            <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="video-modal" class="video-modal-overlay">
+        <div class="video-modal-content">
+            <span class="video-modal-close">&times;</span>
+            <div class="video-container">
+                <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
         </div>
     </div>
-</div>
-
 </body>
 </html>
