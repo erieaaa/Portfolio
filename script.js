@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. THEME SWITCHER
     const themeSwitcher = document.getElementById('theme-switcher');
-    const body = document.body;
+    const body = document.body; // The one and only declaration of 'body'
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         body.classList.add(currentTheme);
@@ -190,9 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
             magneticButton.style.transform = 'translate(0, 0)';
         });
     }
-
+    
     // 12. POP-UP CONTACT FORM LOGIC
-    const body = document.body;
+    // THIS IS THE FIX: The duplicate 'const body' was removed from here.
     const hireBtn = document.querySelector("#hireBtn");
     const closeBtns = document.querySelectorAll("#closeBtn");
     const contactForm = document.getElementById('popup-contact-form');
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             // --- IMPORTANT: PASTE YOUR WEB APP URL HERE ---
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyB2LIOd048NAela6PxQtM7UFah9i-giu1Ptev-wQE2fDWkJbRD3zQmi7_AP2r9CrE6/exec'; 
+            const scriptURL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; 
             const form = e.target;
             const sendButton = form.querySelector('.send');
             
@@ -252,5 +252,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-
