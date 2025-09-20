@@ -128,18 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. CUSTOM VIDEO MODAL (Add before the final '});')
+    // 9. CUSTOM VIDEO MODAL
     const videoModal = document.getElementById('video-modal');
     if (videoModal) {
         const modalIframe = document.getElementById('video-iframe');
         const closeModalBtn = document.querySelector('.video-modal-close');
         
         document.querySelectorAll('.video-link').forEach(link => {
-            // This logic works for any video link you want to open in the modal
-            // It will ignore links meant for Lightbox (like your posters)
             if (!link.hasAttribute('data-lightbox')) {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Stop link from opening new tab
+                    event.preventDefault(); 
                     const videoUrl = this.getAttribute('href');
                     modalIframe.setAttribute('src', videoUrl);
                     videoModal.style.display = 'block';
@@ -149,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeModal = () => {
             videoModal.style.display = 'none';
-            modalIframe.setAttribute('src', ''); // Stop video from playing
+            modalIframe.setAttribute('src', '');
         };
 
         closeModalBtn.addEventListener('click', closeModal);
@@ -157,6 +155,42 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.target === videoModal) {
                 closeModal();
             }
+        });
+    }
+
+    // 10. 3D TILT EFFECT FOR CARDS
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const rotateX = -y / 20; // Adjust divisor for sensitivity
+            const rotateY = x / 20;
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    });
+
+    // 11. MAGNETIC BUTTON EFFECT
+    const magneticButton = document.querySelector('.magnetic-button');
+    if (magneticButton) {
+        const wrapper = document.querySelector('.magnetic-wrapper');
+        wrapper.addEventListener('mousemove', function(e) {
+            const rect = wrapper.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            magneticButton.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+        });
+
+        wrapper.addEventListener('mouseleave', function() {
+            magneticButton.style.transform = 'translate(0, 0)';
         });
     }
 
