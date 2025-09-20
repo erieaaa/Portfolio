@@ -41,7 +41,7 @@ body {
     color: var(--text-color-light);
     font-family: var(--font-body);
     margin: 0;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color: 0.4s ease, color 0.4s ease;
 }
 
 body.dark-mode {
@@ -150,7 +150,6 @@ section:last-of-type { border-bottom: none; }
     padding-bottom: 10px;
 }
 
-/* NEW: Animated underline for section titles */
 .section-title::after {
     content: '';
     position: absolute;
@@ -181,7 +180,6 @@ section:last-of-type { border-bottom: none; }
 .cursor { display: inline-block; background-color: var(--accent-color-light); animation: blink 1s infinite; }
 @keyframes blink { 50% { background-color: transparent; } }
 
-/* NEW: Pixel character floating animation */
 .pixel-character-container {
     animation: floatAnimation 4s ease-in-out infinite;
 }
@@ -225,9 +223,8 @@ section:last-of-type { border-bottom: none; }
 .subsection-title { font-size: 1.8rem; color: var(--accent-color-light); margin-top: 60px; margin-bottom: 20px; border-bottom: 2px solid var(--periwinkle); padding-bottom: 10px; }
 #projects .subsection-title:first-of-type, .tools-section .subsection-title:first-of-type { margin-top: 0; }
 .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.project-card { background: var(--card-bg-light); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; display: flex; flex-direction: column; position: relative; } /* Added position: relative */
+.project-card { background: var(--card-bg-light); border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; display: flex; flex-direction: column; position: relative; }
 
-/* NEW: Glowing border effect */
 .project-card::before {
     content: "";
     position: absolute;
@@ -251,7 +248,8 @@ section:last-of-type { border-bottom: none; }
 
 .project-card:not(.design-card) { padding: 25px; }
 .project-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(85, 88, 121, 0.15); }
-.project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; margin-right: 15px; }
+.project-links { padding: 25px; } /* Corrected for non-design cards */
+.project-links a { color: var(--accent-color-light); font-weight: bold; text-decoration: none; margin-top: 15px; display: inline-block; }
 .design-card a { display: block; overflow: hidden; position: relative; }
 .design-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease; }
 .design-card:hover img { transform: scale(1.05); }
@@ -266,44 +264,37 @@ section:last-of-type { border-bottom: none; }
   6. MISC & INTERACTIVE ELEMENTS
 */
 /* Play Icon Overlay for Videos */
-.design-card a[data-lightbox="videos"]::after { content: '▶'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 48px; background-color: rgba(0, 0, 0, 0.5); width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; line-height: 80px; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
-.design-card a[data-lightbox="videos"]:hover::after { opacity: 1; }
+.design-card a.video-link::after { 
+    content: '▶'; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    font-size: 48px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    line-height: 80px; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+    pointer-events: none; 
+}
+.design-card a.video-link:hover::after { 
+    opacity: 1; 
+}
 
-/* NEW: Scroll to Top Button */
 #scrollTopBtn {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 999;
-    background-color: var(--accent-color-light);
-    color: var(--bg-color-light);
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px);
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: fixed; bottom: 30px; right: 30px; z-index: 999; background-color: var(--accent-color-light); color: var(--bg-color-light);
+    border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; opacity: 0; visibility: hidden; transform: translateY(20px); transition: opacity 0.3s, visibility 0.3s, transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-
-#scrollTopBtn.visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-#scrollTopBtn:hover {
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
-}
+#scrollTopBtn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+#scrollTopBtn:hover { box-shadow: 0 6px 15px rgba(0,0,0,0.2); transform: translateY(-2px); }
 
 /* 
   7. RESPONSIVE DESIGN
@@ -319,30 +310,71 @@ section:last-of-type { border-bottom: none; }
     .about-content { flex-direction: column; }
     .typing-headline { font-size: 2rem; }
 }
-/* ADD THIS TO THE VERY END OF YOUR style.css FILE */
 
 /* --- Cursor Trail --- */
 .cursor-trail {
-    position: fixed; /* Use 'fixed' so it stays relative to the screen, not the page scroll */
-    width: 10px;
-    height: 10px;
-    background: radial-gradient(circle, var(--periwinkle) 30%, transparent 80%);
-    border-radius: 50%;
-    pointer-events: none; /* Allows you to click "through" the trail elements */
-    transform: translate(-50%, -50%);
-    animation: fadeOut 0.5s linear forwards;
-    z-index: 9999; /* Ensures it's on top of everything */
-    top: 0;
+    position: fixed; width: 10px; height: 10px; background: radial-gradient(circle, var(--periwinkle) 30%, transparent 80%);
+    border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); animation: fadeOut 0.5s linear forwards; z-index: 9999; top: 0; left: 0;
+}
+@keyframes fadeOut { from { opacity: 1; transform: translate(-50%, -50%) scale(1); } to { opacity: 0; transform: translate(-50%, -50%) scale(2.5); } }
+
+/* --- Video Modal Styles --- (Add to end of file) */
+.video-modal-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
     left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    to {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(2.5);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.video-modal-content {
+    position: relative;
+    margin: 5% auto;
+    width: 90%;
+    max-width: 960px;
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.video-modal-close:hover {
+    color: #ccc;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
