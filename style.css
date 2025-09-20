@@ -245,17 +245,18 @@ section:last-of-type { border-bottom: none; }
     margin: 0 auto 20px auto;
     line-height: 1.7;
 }
-.contact-email-link {
+.contact-email-link a {
     display: inline-block;
     margin-bottom: 30px;
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--accent-color-light);
     text-decoration: none;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, text-decoration 0.2s ease;
 }
-.contact-email-link:hover {
+.contact-email-link a:hover {
     transform: scale(1.05);
+    text-decoration: underline;
 }
 .contact-links a { 
     color: var(--text-color-light); 
