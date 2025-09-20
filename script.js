@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. THEME SWITCHER
     const themeSwitcher = document.getElementById('theme-switcher');
-    const body = document.body;
+    const body = document.body; // First declaration of 'body'
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
         body.classList.add(currentTheme);
@@ -128,28 +128,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 9. CUSTOM VIDEO MODAL (CORRECTED LOGIC)
+    // 9. CUSTOM VIDEO MODAL
     const videoModal = document.getElementById('video-modal');
     if (videoModal) {
         const modalIframe = document.getElementById('video-iframe');
         const closeModalBtn = document.querySelector('.video-modal-close');
         
         document.querySelectorAll('.video-link').forEach(link => {
-            // THIS IS THE FIX: Only apply the pop-up logic to Google Drive links
             if (link.href.includes('drive.google.com')) {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault(); // Stop the link from opening a new tab
+                    event.preventDefault();
                     const videoUrl = this.getAttribute('href');
                     modalIframe.setAttribute('src', videoUrl);
                     videoModal.style.display = 'block';
                 });
             }
-            // All other links (like your mailto:) will now work normally.
         });
 
         const closeModal = () => {
             videoModal.style.display = 'none';
-            modalIframe.setAttribute('src', ''); // Stop video from playing
+            modalIframe.setAttribute('src', '');
         };
 
         closeModalBtn.addEventListener('click', closeModal);
@@ -167,10 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-
-            const rotateX = -y / 20; // Adjust divisor for sensitivity
+            const rotateX = -y / 20;
             const rotateY = x / 20;
-
             card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
         });
 
@@ -187,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const rect = wrapper.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
-            
             magneticButton.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
         });
 
@@ -195,8 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
             magneticButton.style.transform = 'translate(0, 0)';
         });
     }
-// 12. POP-UP CONTACT FORM LOGIC
-    const body = document.body;
+
+    // 12. POP-UP CONTACT FORM LOGIC
+    // const body = document.body; // THIS LINE WAS THE ERROR. REMOVED IT.
     const hireBtn = document.querySelector("#hireBtn");
     const closeBtns = document.querySelectorAll("#closeBtn");
     const contactForm = document.getElementById('popup-contact-form');
@@ -217,10 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Stop the default form submission
+            e.preventDefault();
 
-            // --- IMPORTANT: PASTE YOUR WEB APP URL HERE ---
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbyB2LIOd048NAela6PxQtM7UFah9i-giu1Ptev-wQE2fDWkJbRD3zQmi7_AP2r9CrE6/exec'; 
+            const scriptURL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; 
             const form = e.target;
             const sendButton = form.querySelector('.send');
             
@@ -235,13 +230,12 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(scriptURL, {
                 method: 'POST',
                 body: JSON.stringify(formData),
-                mode: 'no-cors', // Required for simple POST requests to Apps Script
+                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json',
                 },
             })
             .then(() => {
-                // Since 'no-cors' mode prevents reading the response, we assume success
                 alert('Message sent successfully! Thank you.');
                 body.classList.remove("show-popup");
                 form.reset();
@@ -257,6 +251,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
-
-
