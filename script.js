@@ -69,7 +69,7 @@
   onScroll();
 
   /* ---------- 4. Reveal on scroll ---------- */
-  var revealables = $$('.reveal');
+  var revealables = $$('.reveal').filter(function (el) { return !el.closest('.hero'); });
   if (reduce || !('IntersectionObserver' in window)) {
     revealables.forEach(function (el) { el.classList.add('in'); });
   } else {
@@ -100,7 +100,7 @@
       document.body.style.overflow = 'hidden';
     }
     function closeModal() {
-      modal.classList.remove('on', 'video', 'image');
+      modal.classList.remove('on', 'video', 'image', 'vertical');
       frame.setAttribute('src', '');
       img.setAttribute('src', '');
       cap.textContent = '';
@@ -113,6 +113,7 @@
         frame.setAttribute('src', link.getAttribute('href'));
         var title = $('h4', link.closest('.work'));
         cap.textContent = title ? title.textContent : '';
+        modal.classList.toggle('vertical', link.dataset.ratio === 'vertical');
         openModal('video');
       });
     });
@@ -214,6 +215,164 @@
 
     size(); seed();
     if (reduce) { live = false; } else { frame(); }
+  }
+
+
+  /* ---------- 8. Page-load sequence for the hero ---------- */
+  var heroBits = $$('.hero .reveal');
+  function runHero() {
+    document.body.classList.add('go');
+    heroBits.forEach(function (el, i) {
+      el.style.transitionDelay = (reduce ? 0 : 120 + i * 95) + 'ms';
+      el.classList.add('in');
+    });
+  }
+  if (document.readyState === 'complete') runHero();
+  else window.addEventListener('load', runHero);
+  setTimeout(runHero, 1200); // safety net if a font or image stalls
+
+  /* ---------- 9. Stat count-up ---------- */
+  var counters = $$('.stats strong[data-count]');
+  if (counters.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      // leave the static values in place
+    } else {
+      var cio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var el = entry.target;
+          cio.unobserve(el);
+          var target = parseInt(el.dataset.count, 10) || 0;
+          var suffix = el.dataset.suffix || '';
+          var dur = 1100, t0 = null;
+          function tick(ts) {
+            if (t0 === null) t0 = ts;
+            var p = Math.min((ts - t0) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(target * eased) + (p === 1 ? suffix : '');
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          el.textContent = '0';
+          requestAnimationFrame(tick);
+        });
+      }, { threshold: 0.5 });
+      counters.forEach(function (el) { cio.observe(el); });
+    }
+  }
+
+  /* ---------- 10. Toolkit chip cascade ---------- */
+  var kitGroups = $$('.kit-group');
+  if (kitGroups.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      kitGroups.forEach(function (g) { g.classList.add('in'); });
+    } else {
+      var kio = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          kio.unobserve(entry.target);
+        });
+      }, { threshold: 0.15 });
+      kitGroups.forEach(function (g) { kio.observe(g); });
+    }
+  }
+
+  /* ---------- 11. Timeline progress line ---------- */
+  var timeline = $('.timeline');
+  var tlFill = $('.tl-fill');
+  if (timeline && tlFill && !reduce) {
+    var tlItems = $$('li', timeline);
+    var tlPending = false;
+    function tlUpdate() {
+      tlPending = false;
+      var rect = timeline.getBoundingClientRect();
+      var mid = window.innerHeight * 0.55;
+      var travelled = mid - rect.top;
+      var pct = Math.max(0, Math.min(travelled / rect.height, 1));
+      tlFill.style.height = (pct * 100) + '%';
+      tlItems.forEach(function (li) {
+        li.classList.toggle('lit', li.getBoundingClientRect().top < mid);
+      });
+    }
+    window.addEventListener('scroll', function () {
+      if (!tlPending) { tlPending = true; requestAnimationFrame(tlUpdate); }
+    }, { passive: true });
+    window.addEventListener('resize', tlUpdate);
+    tlUpdate();
+  }
+
+  /* ---------- 12. Card spotlight ---------- */
+  if (!coarse) {
+    $$('.panel, .work').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--px', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--py', (e.clientY - r.top) + 'px');
+      });
+    });
+  }
+
+  /* ---------- 13. Cursor ring ---------- */
+  var ring = $('#ring');
+  if (ring && !coarse && !reduce) {
+    var rx = window.innerWidth / 2, ry = window.innerHeight / 2;
+    var tx = rx, ty = ry, shown = false;
+
+    document.addEventListener('mousemove', function (e) {
+      tx = e.clientX; ty = e.clientY;
+      if (!shown) { shown = true; ring.classList.add('on'); }
+    }, { passive: true });
+
+    document.addEventListener('mouseleave', function () {
+      shown = false; ring.classList.remove('on');
+    });
+
+    (function follow() {
+      rx += (tx - rx) * 0.18;
+      ry += (ty - ry) * 0.18;
+      ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
+      requestAnimationFrame(follow);
+    })();
+
+    var hotspots = 'a, button, .chip, .shot, .work-media, input, textarea';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest && e.target.closest(hotspots)) ring.classList.add('grow');
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest && e.target.closest(hotspots)) ring.classList.remove('grow');
+    });
+  }
+
+  /* ---------- 14. Magnetic buttons ---------- */
+  if (!coarse && !reduce) {
+    $$('.mag').forEach(function (btn) {
+      btn.addEventListener('mousemove', function (e) {
+        var r = btn.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width / 2;
+        var y = e.clientY - r.top - r.height / 2;
+        btn.style.transform = 'translate(' + (x * 0.22) + 'px,' + (y * 0.35) + 'px)';
+      });
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transform = '';
+      });
+    });
+  }
+
+  /* ---------- 15. Hero portrait drift on scroll ---------- */
+  var portrait = $('.portrait-img');
+  if (portrait && !reduce) {
+    var pPending = false;
+    window.addEventListener('scroll', function () {
+      if (pPending) return;
+      pPending = true;
+      requestAnimationFrame(function () {
+        pPending = false;
+        var y = window.pageYOffset;
+        if (y < window.innerHeight * 1.4) {
+          portrait.style.transform = 'translateY(' + (y * 0.07) + 'px)';
+        }
+      });
+    }, { passive: true });
   }
 
 })();
