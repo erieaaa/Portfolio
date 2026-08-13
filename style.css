@@ -290,7 +290,7 @@ p { margin: 0 0 1em; }
 
 .hero-type { position: relative; }
 
-h1.display { font-size: clamp(3.6rem, 12.5vw, 9.5rem); }
+h1.display { font-size: clamp(2.7rem, 9.6vw, 7.4rem); }
 h1.display .line { display: block; }
 .line-violet {
   background: linear-gradient(105deg, var(--violet-soft), var(--violet) 45%, var(--violet-deep));
@@ -301,7 +301,7 @@ h1.display .line { display: block; }
 .script {
   display: block;
   font-family: var(--script);
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 4.4vw, 3rem);
   color: var(--violet);
   margin: -0.35em 0 0 0.35em;
   transform: rotate(-3deg);
@@ -643,4 +643,161 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; }
   .orb, .grain, .stamp svg, .portrait-glow, .dot { animation: none !important; }
   .reveal { opacity: 1; transform: none; transition: none; }
   * { transition-duration: .01ms !important; }
+}
+
+/* =================================================================
+   23. MOTION PACK
+   ================================================================= */
+
+/* ---- 23.1 Hero headline mask-slide ---- */
+h1.display .line { display: block; overflow: hidden; padding-bottom: 0.04em; }
+h1.display .line i {
+  display: block; font-style: normal;
+  transform: translateY(108%);
+  transition: transform 1.05s var(--ease);
+}
+body.go h1.display .line i { transform: translateY(0); }
+body.go h1.display .line:nth-child(2) i { transition-delay: .12s; }
+
+/* ---- 23.2 Spotlight that follows the cursor inside cards ---- */
+.panel, .work { position: relative; --px: 50%; --py: 50%; }
+.panel::after, .work::after {
+  content: ''; position: absolute; inset: 0;
+  border-radius: inherit; pointer-events: none;
+  background: radial-gradient(340px circle at var(--px) var(--py),
+              rgba(167,139,250,.15), transparent 62%);
+  opacity: 0; transition: opacity .4s ease;
+}
+.panel:hover::after, .work:hover::after { opacity: 1; }
+.work-body, .panel h3, .panel p, .panel .ico { position: relative; z-index: 1; }
+
+/* ---- 23.3 Timeline progress line ---- */
+.timeline { position: relative; padding-left: 32px; }
+.timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px; background: var(--line);
+}
+.tl-fill {
+  position: absolute; left: 0; top: 0; width: 1px; height: 0;
+  background: linear-gradient(180deg, var(--violet-soft), var(--violet-deep));
+  box-shadow: 0 0 12px rgba(167,139,250,.5);
+}
+.timeline li { position: relative; }
+.timeline li::before {
+  content: ''; position: absolute; left: -36px; top: 40px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ink); border: 1px solid var(--line);
+  transition: background .45s ease, border-color .45s ease, box-shadow .45s ease;
+}
+.timeline li.lit::before {
+  background: var(--violet); border-color: var(--violet);
+  box-shadow: 0 0 0 5px rgba(167,139,250,.16);
+}
+
+/* ---- 23.4 Marquee ---- */
+.marquee {
+  overflow: hidden; border-block: 1px solid var(--line);
+  padding: 20px 0; margin: clamp(30px, 5vw, 60px) 0;
+  transform: rotate(-1.4deg); background: rgba(23,16,34,.4);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.marquee-track {
+  display: flex; align-items: center; gap: 26px; width: max-content;
+  animation: slide 38s linear infinite;
+}
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee-track span {
+  font-family: var(--display); text-transform: uppercase;
+  font-size: clamp(1.3rem, 2.6vw, 2.1rem); color: var(--bone);
+  white-space: nowrap; opacity: .55; transition: opacity .3s, color .3s;
+}
+.marquee-track span:hover { opacity: 1; color: var(--violet); }
+.marquee-track b { color: var(--violet); font-size: .8rem; opacity: .7; }
+@keyframes slide { to { transform: translateX(-50%); } }
+
+/* ---- 23.5 Cursor ring ---- */
+#ring {
+  position: fixed; top: 0; left: 0; z-index: 1500;
+  width: 26px; height: 26px; margin: -13px 0 0 -13px;
+  border: 1px solid var(--violet); border-radius: 50%;
+  pointer-events: none; opacity: 0;
+  transition: opacity .3s ease, width .28s var(--ease),
+              height .28s var(--ease), margin .28s var(--ease),
+              background .28s ease, border-color .28s ease;
+}
+#ring.on { opacity: .8; }
+#ring.grow {
+  width: 54px; height: 54px; margin: -27px 0 0 -27px;
+  background: rgba(167,139,250,.12);
+}
+
+/* ---- 23.6 Magnetic buttons ---- */
+.mag { will-change: transform; }
+
+/* ---- 23.7 Chips cascade in ---- */
+.kit .chip {
+  opacity: 0; transform: translateY(14px) scale(.96);
+  transition: opacity .5s var(--ease), transform .5s var(--ease),
+              border-color .25s ease, background .25s ease;
+}
+.kit-group.in .chip { opacity: 1; transform: none; }
+.kit-group.in .chip:nth-child(1){transition-delay:.02s}
+.kit-group.in .chip:nth-child(2){transition-delay:.06s}
+.kit-group.in .chip:nth-child(3){transition-delay:.10s}
+.kit-group.in .chip:nth-child(4){transition-delay:.14s}
+.kit-group.in .chip:nth-child(5){transition-delay:.18s}
+.kit-group.in .chip:nth-child(6){transition-delay:.22s}
+.kit-group.in .chip:nth-child(7){transition-delay:.26s}
+.kit-group.in .chip:nth-child(8){transition-delay:.30s}
+
+/* ---- 23.8 Stat count-up sizing guard ---- */
+.stats strong { font-variant-numeric: tabular-nums; }
+
+/* ---- 23.9 Motion pack, reduced-motion off switch ---- */
+@media (prefers-reduced-motion: reduce) {
+  h1.display .line i { transform: none !important; }
+  .marquee-track { animation: none !important; }
+  .marquee { transform: none; }
+  #ring { display: none; }
+  .kit .chip { opacity: 1 !important; transform: none !important; }
+  .tl-fill { display: none; }
+}
+
+@media (max-width: 720px) {
+  #ring { display: none; }
+  .timeline { padding-left: 24px; }
+  .timeline li::before { left: -28px; top: 30px; }
+}
+
+/* =================================================================
+   24. VERTICAL VIDEO SUPPORT
+   ================================================================= */
+
+/* Portrait-shaped cards for the TikTok clips */
+.cards-3.vertical { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards-3.vertical .work-media { aspect-ratio: 9 / 16; }
+.cards-3.vertical .work { max-width: 340px; }
+
+/* Fallback when a Drive thumbnail can't be fetched */
+.work-media {
+  background: linear-gradient(150deg, var(--panel-2), var(--ink));
+}
+.work-media::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(124,58,237,.28), transparent 65%);
+}
+.work-media img { position: relative; z-index: 1; }
+.play { z-index: 2; }
+
+/* Modal switches to a tall frame for vertical clips */
+.modal.vertical .modal-inner { max-width: 420px; }
+.modal.vertical .modal-frame { padding-bottom: 177.8%; }
+
+@media (max-width: 1024px) {
+  .cards-3.vertical { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .cards-3.vertical { grid-template-columns: 1fr; }
+  .cards-3.vertical .work { max-width: 320px; margin-inline: auto; }
 }
