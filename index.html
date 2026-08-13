@@ -1,303 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erika Guido - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erika Mae Guido — System Developer &amp; Designer</title>
+<meta name="description" content="System Developer and designer from Calamba, Laguna. I build automation workflows, internal systems, and the visual assets that go with them.">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-        <a href="#" class="nav-logo"><h1>Erika Guido</h1></a>
-        <ul class="nav-menu">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#tools">Tools</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
-        <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
 
-        <button id="theme-switcher" aria-label="Toggle theme">
-            <div class="slider"></div>
-        </button>
-    </nav>
-</header>
-
-    <main>
-    <section class="hero">
-        
-    <div class="hero-content">
-        <h2 class="typing-headline">Hi, I build <span id="typing-text"></span><span class="cursor"> </span></h2>
-        <p data-aos="fade-up" data-aos-delay="100">Welcome to my digital playground where code meets creativity.</p>
-    </div>
-    
-    <div class="pixel-character-container">
-        <div class="pixel-character"></div>
-    </div>
-</section>
-    
-        <section id="about" class="about-section">
-            <h2 class="section-title" data-aos="fade-up">About Me</h2>
-            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
-                <div class="about-image">
-                    <img src="Me.jpeg" alt="A professional photo of Erika Guido" id="about-img">
-                </div>
-                <div class="about-text">
-                    <h3>Developer & Designer</h3>
-                    <p>
-                        I'm a passionate and detail-oriented professional with a love for creating clean, intuitive digital experiences. My journey has led me to explore both the logical world of software development and the aesthetic realm of creative design. I enjoy solving real-world problems and turning good ideas into functional, thoughtful products.
-                    </p>
-                    <p>
-I'm also someone who’s willing to learn, flexible, and adaptable—whether it’s learning a new tool, taking on tasks that align with my skills in development, design, or problem-solving, or adjusting to a fast-changing environment. Growth and collaboration matter to me, and I’m always open to new ways of thinking.
-                    </p>
-                    <div class="magnetic-wrapper">
-                        <a href="https://drive.google.com/uc?export=download&id=1FICDA3rQhbuyBPbSvRTw3hzIr8sVv_Yt" download class="btn magnetic-button">Download Resume</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<section id="skills" class="skills-section">
-    <h2 class="section-title" data-aos="fade-up">My Skills & Expertise</h2>
-    <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
-        <div class="skill-category">
-            <h3>Automation & API Integration</h3>
-            <div class="skill-pills">
-                <span>Google Apps Script</span>
-                <span>API Integration</span>
-                <span>Google Drive Automation</span>
-                <span>Google Sheets Data Manipulation</span>
-                <span>Google Docs & Slides Automation</span>
-                <span>Automated Email Workflows</span>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h3>Office & Data Productivity</h3>
-            <div class="skill-pills">
-                <span>Microsoft Excel (Proficient)</span>
-                <span>Microsoft Word (Proficient)</span>
-                <span>Microsoft PowerPoint (Proficient)</span>
-                <span>MS Access (Basic)</span>
-                <span>Data Analysis & Reporting</span>
-            </div>
-        </div>
-        <div class="skill-category">
-            <h3>Modern Platforms & Creative Skills</h3>
-            <div class="skill-pills">
-                <span>Notion</span>
-                <span>Zapier Integration</span>
-                <span>Graphic Design (Canva)</span>
-                <span>Video Editing</span>
-                <span>Social Media Management</span>
-                <span>Python (Basic)</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="tools-section" id="tools">
-  <h2 class="section-title" data-aos="fade-up">Tools I Use</h2>
-  <!-- Google Tools -->
-  <h3 class="subsection-title" data-aos="fade-up">Google Tools</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-docs.png" alt="Google Docs Icon"><p>Google Docs</p></div><div class="flip-card-back"><p>Creating and collaborating on text documents in real time.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-slides.png" alt="Google Slides Icon"><p>Google Slides</p></div><div class="flip-card-back"><p>Designing presentations and collaborating seamlessly online.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-sheets.png" alt="Google Sheets Icon"><p>Google Sheets</p></div><div class="flip-card-back"><p>Analyzing, automating, and visualizing complex data sets.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-drive.png" alt="Google Drive Icon"><p>Google Drive</p></div><div class="flip-card-back"><p>Cloud storage for file management and team collaboration.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/google-forms.png" alt="Google Forms Icon"><p>Google Forms</p></div><div class="flip-card-back"><p>Collecting feedback, creating surveys, and quiz responses efficiently.</p></div></div></div>
-  </div>
-  <!-- Microsoft Office -->
-  <h3 class="subsection-title" data-aos="fade-up">Microsoft Office</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/word.png" alt="MS Word Icon"><p>MS Word</p></div><div class="flip-card-back"><p>Professional document creation and advanced formatting.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/excel.png" alt="MS Excel Icon"><p>MS Excel</p></div><div class="flip-card-back"><p>Mastering data analysis with formulas, and pivot tables.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/powerpoint.png" alt="MS PowerPoint Icon"><p>MS PowerPoint</p></div><div class="flip-card-back"><p>Creating compelling and interactive visual presentations.</p></div></div></div>
-  </div>
-  <!-- Automation & Productivity -->
-  <h3 class="subsection-title" data-aos="fade-up">Automation & Productivity</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/gas.png" alt="Google Apps Script Icon"><p>Google Apps Script</p></div><div class="flip-card-back"><p>Automating Google Workspace workflows with custom JavaScript code.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/notion.png" alt="Notion Icon"><p>Notion</p></div><div class="flip-card-back"><p>An all-in-one workspace for docs, tasks, wikis, and databases.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/clickup.png" alt="ClickUp Icon"><p>ClickUp</p></div><div class="flip-card-back"><p>Powerful project management and team collaboration tool.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/make.png" alt="Make Icon"><p>Make.com</p></div><div class="flip-card-back"><p>Visually build, manage, and automate workflows.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/zapier.png" alt="Zapier Icon"><p>Zapier</p></div><div class="flip-card-back"><p>Connecting apps and automating workflows without writing code.</p></div></div></div>
-  </div>
-  <!-- Design & Editing -->
-  <h3 class="subsection-title" data-aos="fade-up">Design & Editing</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/canva.png" alt="Canva Icon"><p>Canva</p></div><div class="flip-card-back"><p>Creating social graphics, posters, and professional designs quickly.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/photoshop.png" alt="Photoshop Icon"><p>Photoshop</p></div><div class="flip-card-back"><p>Industry-standard for advanced image editing and graphic design.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/illustrator.png" alt="Illustrator Icon"><p>Illustrator</p></div><div class="flip-card-back"><p>The leading tool for vector graphics, logos, and illustrations.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="icons/capcut.png" alt="CapCut Icon"><p>CapCut</p></div><div class="flip-card-back"><p>Fast and intuitive video editing, perfect for social media content.</p></div></div></div>
-  </div>
-  <!-- Programming Languages -->
-  <h3 class="subsection-title" data-aos="fade-up">Programming Languages</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>HTML</p></div><div class="flip-card-back"><p>Structuring the web with semantic, accessible markup.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>CSS</p></div><div class="flip-card-back"><p>Styling and laying out web pages for responsive, beautiful designs.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>JavaScript</p></div><div class="flip-card-back"><p>Making websites interactive, dynamic, and user-friendly.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Java</p></div><div class="flip-card-back"><p>Building robust backend systems and enterprise-level applications.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Python</p></div><div class="flip-card-back"><p>Versatile language for automation, data analysis, and AI models.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>C++</p></div><div class="flip-card-back"><p>High-performance language for systems programming and game dev.</p></div></div></div>
-  </div>
-  <!-- AI Tools -->
-  <h3 class="subsection-title" data-aos="fade-up">AI Tools</h3>
-  <div class="tools-grid" data-aos="fade-up">
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Gemini</p></div><div class="flip-card-back"><p>Multimodal AI for content creation and intelligent automation.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>OpenAI</p></div><div class="flip-card-back"><p>Powerful AI models (like GPT) for coding, writing, and research.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Perplexity</p></div><div class="flip-card-back"><p>Conversational search engine for accurate, cited answers.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>ElevenLabs</p></div><div class="flip-card-back"><p>AI-powered text-to-speech for creating realistic, human-like voiceovers.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Descript</p></div><div class="flip-card-back"><p>Intuitive audio/video editing powered by AI transcription.</p></div></div></div>
-    <div class="tool-card flip-card"><div class="flip-card-inner"><div class="flip-card-front"><p>Claude</p></div><div class="flip-card-back"><p>Advanced AI for analysis, text generation, and complex workflows.</p></div></div></div>
-  </div>
-</section>
-
-<section id="projects">
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Coding Projects</h2>
-        <div class="project-grid" data-aos="fade-up">
-            <div class="project-card">
-                <h3>Interactive To-Do App</h3>
-                <p>A responsive and persistent to-do list application.</p>
-                <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
-                <div class="project-links">
-                    <a href="https://erieaaa.github.io/Todo-App/" target="_blank">Live Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Weather Dashboard</h3>
-                <p>Fetches real-time weather data from a third-party API and displays it in a clean UI.</p>
-                <p><strong>Technologies:</strong> React, API, CSS</p>
-                <div class="project-links">
-                    <a href="https://erieaaa.github.io/weather/" target="_blank">Live Demo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Automation & Scripting Demos</h2>
-        <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1qawoqSjkrlH6Yp9hpvEbesEGLokAotT3/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/translator-thumb.png" alt="Thumbnail for Google Sheets AI Translator video demo">
-                </a>
-                <div class="card-content"><h3>Google Sheets AI Auto-Translator</h3><p>A custom script that uses an AI API to automatically translate text across multiple languages directly within a Google Sheet.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1U4vSZB8tmjcns8bhKhDUDXgohNZa8m51/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/email-thumb.png" alt="Thumbnail for Google Sheets AI Email Generator video demo">
-                </a>
-                <div class="card-content"><h3>Google Sheets AI Email Generator</h3><p>An automation tool that takes prompts from a spreadsheet and uses AI to generate complete, professional emails via Google Apps Script.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1DBM6HQz7vowLTSiiy6eKJh4E45881laM/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/n8n-thumb.png" alt="Thumbnail for n8n Twitter AI automation video demo">
-                </a>
-                <div class="card-content">
-                    <h3>Twitter AI Content Automation</h3>
-                    <p>An n8n workflow that generates AI content for Twitter and sends it to Discord for human approval before posting.</p>
-                </div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1bYaNlXUIkiK3d_-KM4SgpDaplnjZ35VT/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/blog-creation-thumb.png" alt="Thumbnail for an automated blog creation workflow video demo">
-                </a>
-                <div class="card-content">
-                    <h3>Blog Creation with Human Approval</h3>
-                    <p>An automated workflow that drafts a blog post using AI, sends it to a designated channel for review, and waits for human approval before publishing.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Graphic Design Samples</h2>
-        <h3 class="subsection-title" data-aos="fade-up">Product Posters</h3>
-        <div class="project-grid" data-aos="fade-up">
-            <div class="project-card design-card"><a href="designs/facial.png" data-lightbox="designs" data-title="Hydrating Facial Serum Poster"><img src="designs/facial.png" alt="Promotional poster for a facial serum"></a><div class="card-content"><h3>Facial Serum Ad</h3><p>A clean and modern poster for a hydrating facial serum.</p></div></div>
-            <div class="project-card design-card"><a href="designs/poster-coffee.png" data-lightbox="designs" data-title="Cold Brew Vanilla Coffee Poster"><img src="designs/poster-coffee.png" alt="Poster for a cold brew coffee"></a><div class="card-content"><h3>Cold Brew Coffee Ad</h3><p>A rustic and appealing poster for a cold brew vanilla coffee.</p></div></div>
-            <div class="project-card design-card"><a href="designs/banana.png" data-lightbox="designs" data-title="Banana Cream Drink Poster"><img src="designs/banana.png" alt="Poster for a banana cream drink"></a><div class="card-content"><h3>Banana Cream Drink Ad</h3><p>A bright and cheerful ad for a banana cream flavored drink.</p></div></div>
-            <div class="project-card design-card"><a href="designs/java.png" data-lightbox="designs" data-title="Java Chip Ice Blended Poster"><img src="designs/java.png" alt="Poster for a Java Chip frappe"></a><div class="card-content"><h3>Java Chip Frappe Ad</h3><p>A tempting poster for a Java Chip ice blended beverage.</p></div></div>
-            <div class="project-card design-card"><a href="designs/sprite.png" data-lightbox="designs" data-title="Sprite Drink Poster"><img src="designs/sprite.png" alt="Poster for a can of Sprite"></a><div class="card-content"><h3>Sprite Refreshment Ad</h3><p>A cool and refreshing poster design for Sprite.</p></div></div>
-            <div class="project-card design-card"><a href="designs/pumpkin.png" data-lightbox="designs" data-title="Pumpkin Spice Latte Poster"><img src="designs/pumpkin.png" alt="Poster for a Pumpkin Spice Latte"></a><div class="card-content"><h3>Pumpkin Spice Latte Ad</h3><p>A cozy, seasonal poster for a Pumpkin Spice Latte.</p></div></div>
-        </div>
-    </div>
-
-    <div class="project-subsection">
-        <h2 class="section-title" data-aos="fade-up">Video Editing Samples</h2>
-        <div class="project-grid" data-aos="fade-up" data-aos-delay="100">
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1TuK98l0tUcM9oeUIHhrt9qOzHvn16mCr/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/campaign-thumb.png" alt="Thumbnail for a brand campaign video">
-                </a>
-                <div class="card-content"><h3>Campaign Video</h3><p>An inspiring video for a brand awareness campaign, designed for social media.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1ksumOx_pCagSCWsEtEqkx_YIP0CE1DPC/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/process-thumb.png" alt="Thumbnail for a company process video">
-                </a>
-                <div class="card-content"><h3>Company Process</h3><p>An animated explainer video simplifying a complex company workflow.</p></div>
-            </div>
-            <div class="project-card design-card">
-                <a href="https://drive.google.com/file/d/1UuyELoVmOixADoOyxwuQVx6ZwH1q-cad/preview" class="video-link" rel="noopener noreferrer">
-                    <img src="thumbnails/demo-thumb.png" alt="Thumbnail for a product demo video">
-                </a>
-                <div class="card-content"><h3>Product Commercial</h3><p>A short, engaging commercial demonstrating key product features.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-        
-<section id="contact" data-aos="fade-up">
-    <h2 class="section-title">Get In Touch</h2>
-    <p>
-        I'm currently open to new opportunities and would love to hear from you.
-        <br>
-        The best way to reach me is by email.
-    </p>
-    <div class="contact-email-link">
-        <a href="mailto:mserikaguido@gmail.com">mserikaguido@gmail.com</a>
-    </div>
-    <div class="contact-links">
-        <p>
-            <a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/erieaaa" target="_blank">GitHub</a>
-        </p>
-    </div>
-</section>
-    </main>
-
-    <a href="#" id="scrollTopBtn" aria-label="Go to top">&#8679;</a>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="script.js"></script>
-
-<!-- Video Modal HTML - Add this before </body> -->
-<div id="video-modal" class="video-modal-overlay">
-    <div class="video-modal-content">
-        <span class="video-modal-close">&times;</span>
-        <div class="video-container">
-            <iframe id="video-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-    </div>
+<div id="progress"></div>
+<div id="aura" aria-hidden="true">
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <div class="mesh"></div>
+  <canvas id="dust"></canvas>
+  <div class="grain"></div>
 </div>
 
+<!-- ============ NAV ============ -->
+<header id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">EG</span>
+      <span class="brand-name">Erika Guido</span>
+    </a>
+
+    <nav class="nav-links" id="menu">
+      <a href="#about">About</a>
+      <a href="#work">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#gallery">Design</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-solid btn-sm">Hire me <span class="arw">↗</span></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+
+    <div class="hero-eyebrow reveal">
+      <span class="rule"></span>
+      <span class="mono">Information Technology</span>
+      <span class="spacer"></span>
+      <span class="mono avail"><i class="dot"></i> Available for work</span>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-type">
+        <h1 class="display">
+          <span class="line line-violet reveal">SYSTEM</span>
+          <span class="line reveal">DEVELOPER</span>
+        </h1>
+        <span class="script reveal">&amp; designer</span>
+
+        <p class="hero-copy reveal">
+          I build automation workflows, internal systems, and the digital assets
+          that go with them — pairing technical work with design so the result is
+          something people actually want to use.
+        </p>
+
+        <p class="mono code-line reveal">&lt;/ automate. build. design. /&gt;</p>
+
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn-solid">See my work <span class="arw">↗</span></a>
+          <!-- TODO: replace with your own Drive link if it changes -->
+          <a href="https://drive.google.com/uc?export=download&amp;id=1FICDA3rQhbuyBPbSvRTw3hzIr8sVv_Yt" class="btn btn-ghost" download>Download CV <span class="arw">↓</span></a>
+        </div>
+      </div>
+
+      <div class="hero-portrait reveal">
+        <div class="portrait-glow"></div>
+        <!-- IMAGE NEEDED → images/erika-hero.png (cut-out, transparent background) -->
+        <img src="images/erika-hero.png" alt="Portrait of Erika Mae Guido" class="portrait-img">
+        <div class="stamp" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs><path id="circlePath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+            <text><textPath href="#circlePath">SYSTEM DEVELOPER · AUTOMATION · DESIGN · </textPath></text>
+          </svg>
+          <span class="stamp-core">EG</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDIT THESE NUMBERS ANY TIME -->
+    <ul class="stats reveal">
+      <li><strong>4+</strong><span>Years in IT</span></li>
+      <li><strong>5</strong><span>Roles held</span></li>
+      <li><strong>20+</strong><span>Tools &amp; platforms</span></li>
+      <li><strong>6</strong><span>Live demos</span></li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ============ WHAT I DO ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow mono reveal"><span class="rule"></span>What I do</p>
+      <h2 class="display h2 reveal">FOUR THINGS<br>I&apos;M ACTUALLY<br>GOOD AT</h2>
+    </div>
+
+    <div class="cards-4">
+      <article class="panel reveal">
+        <div class="ico">⚙</div>
+        <h3>Automation &amp; AI Workflows</h3>
+        <p>Google Apps Script, n8n, Make and Zapier — connecting tools so repetitive admin work runs on its own.</p>
+      </article>
+      <article class="panel reveal">
+        <div class="ico">&lt;/&gt;</div>
+        <h3>System Development</h3>
+        <p>Internal applications, databases, dashboards and reporting systems, plus the documentation to maintain them.</p>
+      </article>
+      <article class="panel reveal">
+        <div class="ico">◈</div>
+        <h3>Graphic &amp; Video Design</h3>
+        <p>Posters, infographics, presentation decks and short-form video for campaigns and internal communications.</p>
+      </article>
+      <article class="panel reveal">
+        <div class="ico">▦</div>
+        <h3>Data &amp; Reporting</h3>
+        <p>Cleaning, structuring and visualising data in Sheets and Excel so decisions are based on something solid.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <!-- IMAGE NEEDED → images/erika-about.jpg (portrait crop, 4:5) -->
+      <img src="images/erika-about.jpg" alt="Erika Mae Guido">
+      <div class="about-badge mono">Calamba, Laguna · PH</div>
+    </div>
+
+    <div class="about-body">
+      <p class="eyebrow mono reveal"><span class="rule"></span>About me</p>
+      <h2 class="display h2 reveal">I SIT BETWEEN<br>THE CODE AND<br>THE CANVAS</h2>
+
+      <p class="reveal">
+        I&apos;m a System Developer with a graphic design habit. Most of my work has been
+        building internal tools that cut manual effort — workflows, dashboards, reporting
+        systems — and then designing the posters, decks and videos that go around them.
+      </p>
+      <p class="reveal">
+        I&apos;ve worked in manufacturing IT, taught senior high school computer subjects,
+        and freelanced as an automation specialist and virtual assistant. That mix means
+        I&apos;m comfortable talking to both engineers and the people who&apos;ll actually
+        use the thing.
+      </p>
+
+      <ul class="facts reveal">
+        <li><span class="mono">Education</span> BS Information Technology — St. Vincent College of Cabuyao, 2019–2023 <em>(Best in Capstone)</em></li>
+        <li><span class="mono">Eligibility</span> Professional Civil Service Eligibility — Passed 2024</li>
+        <li><span class="mono">Based in</span> San Juan, Calamba City, Laguna — open to remote</li>
+      </ul>
+
+      <div class="reveal">
+        <a href="https://drive.google.com/uc?export=download&amp;id=1FICDA3rQhbuyBPbSvRTw3hzIr8sVv_Yt" class="btn btn-solid" download>Download CV <span class="arw">↓</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow mono reveal"><span class="rule"></span>Experience</p>
+      <h2 class="display h2 reveal">WHERE I&apos;VE<br>BEEN</h2>
+    </div>
+
+    <ol class="timeline">
+      <li class="reveal">
+        <div class="tl-when mono">Oct 2025 — Jan 2026</div>
+        <div class="tl-what">
+          <h3>Virtual Assistant <span class="tag">Part-time</span></h3>
+          <p class="org">Khud Branding Studio</p>
+          <p>Built and maintained automated workflows for internal admin and client processes, organised Google Drive and Notion workspaces including client databases and group coaching systems, and designed Canva materials for client-facing sessions.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="tl-when mono">Oct 2025 — Jan 2026</div>
+        <div class="tl-what">
+          <h3>Automation Specialist <span class="tag">Project-based</span></h3>
+          <p class="org">Physio &amp; More Ltd.</p>
+          <p>Designed an AI-assisted workflow to review physiotherapy SOAP notes against clinic SOPs, with scoring logic producing machine-readable audit results per clinician, automated trend aggregation, and an A4 PDF reporting flow. Advised on data handling and HIPAA-aligned practices.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="tl-when mono">Jun 2024 — Dec 2025</div>
+        <div class="tl-what">
+          <h3>System Developer</h3>
+          <p class="org">Gunma Gohkin Philippines Corporation — Cabuyao, Laguna</p>
+          <p>Led development and deployment of internal digital solutions. Gathered requirements from department heads, built and maintained applications, databases, dashboards and reporting systems, produced full technical documentation, and handled graphic and video work for internal communications. Mentored colleagues on new tools and platforms.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="tl-when mono">Aug 2023 — May 2024</div>
+        <div class="tl-what">
+          <h3>Computer Teacher <span class="tag">SHS Department</span></h3>
+          <p class="org">St. Vincent College of Cabuyao</p>
+          <p>Taught Computer Hardware Services 1 &amp; 2 and Empowerment Technologies, designed lesson plans and digital resources aligned to K–12 standards, and served as Grade 11 class adviser.</p>
+        </div>
+      </li>
+      <li class="reveal">
+        <div class="tl-when mono">Jun 2022 — Aug 2022</div>
+        <div class="tl-what">
+          <h3>IT Assistant Intern <span class="tag">Dean&apos;s Office</span></h3>
+          <p class="org">St. Vincent College of Cabuyao</p>
+          <p>Prepared digital and printed materials for school events, troubleshot printers, networking and system issues, and helped build reports and templates for academic administration.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="wrap">
+    <div class="head head-row">
+      <div>
+        <p class="eyebrow mono reveal"><span class="rule"></span>Selected work</p>
+        <h2 class="display h2 reveal">FEATURED<br>PROJECTS</h2>
+      </div>
+      <a href="https://github.com/erieaaa" target="_blank" rel="noopener" class="link-arrow mono reveal">All repos on GitHub ↗</a>
+    </div>
+
+    <h3 class="sub mono reveal">Automation &amp; scripting</h3>
+    <div class="cards-3">
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1qawoqSjkrlH6Yp9hpvEbesEGLokAotT3/preview">
+          <img src="thumbnails/translator-thumb.png" alt="Google Sheets AI auto-translator demo">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body">
+          <h4>Sheets AI Auto-Translator</h4>
+          <p>Apps Script that calls an AI API to translate text across languages inside a Google Sheet.</p>
+          <p class="mono stackline">Apps Script · AI API · Sheets</p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1U4vSZB8tmjcns8bhKhDUDXgohNZa8m51/preview">
+          <img src="thumbnails/email-thumb.png" alt="Google Sheets AI email generator demo">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body">
+          <h4>Sheets AI Email Generator</h4>
+          <p>Takes prompts from a spreadsheet and drafts complete, professional emails automatically.</p>
+          <p class="mono stackline">Apps Script · AI API · Gmail</p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1DBM6HQz7vowLTSiiy6eKJh4E45881laM/preview">
+          <img src="thumbnails/n8n-thumb.png" alt="n8n Twitter AI automation demo">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body">
+          <h4>Twitter AI Content Pipeline</h4>
+          <p>n8n workflow that generates posts and routes them to Discord for human approval before publishing.</p>
+          <p class="mono stackline">n8n · Discord · AI API</p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1bYaNlXUIkiK3d_-KM4SgpDaplnjZ35VT/preview">
+          <img src="thumbnails/blog-creation-thumb.png" alt="Automated blog creation workflow demo">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body">
+          <h4>Blog Draft with Approval Gate</h4>
+          <p>Drafts a post with AI, sends it for review, and waits for a human yes before it goes live.</p>
+          <p class="mono stackline">n8n · AI API · Webhooks</p>
+        </div>
+      </article>
+    </div>
+
+    <h3 class="sub mono reveal">Web builds</h3>
+    <div class="cards-3">
+      <article class="work work-flat reveal">
+        <div class="work-body">
+          <h4>Interactive To-Do App</h4>
+          <p>A responsive to-do list that keeps your items between visits.</p>
+          <p class="mono stackline">HTML · CSS · JavaScript</p>
+          <a href="https://erieaaa.github.io/Todo-App/" target="_blank" rel="noopener" class="link-arrow">Live demo ↗</a>
+        </div>
+      </article>
+      <article class="work work-flat reveal">
+        <div class="work-body">
+          <h4>Weather Dashboard</h4>
+          <p>Pulls live weather from a third-party API and lays it out in a clean interface.</p>
+          <p class="mono stackline">React · REST API · CSS</p>
+          <a href="https://erieaaa.github.io/weather/" target="_blank" rel="noopener" class="link-arrow">Live demo ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow mono reveal"><span class="rule"></span>How I work</p>
+      <h2 class="display h2 reveal">FROM MESSY<br>PROCESS TO<br>RUNNING SYSTEM</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="reveal"><span class="num mono">01</span><div><h3>Map the workflow</h3><p>Sit with the people doing the task, write down every step as it actually happens — not how the manual says it does.</p></div></li>
+      <li class="reveal"><span class="num mono">02</span><div><h3>Design the logic</h3><p>Decide what gets automated, what stays human, and where the approval gates go. Agree on it before anything is built.</p></div></li>
+      <li class="reveal"><span class="num mono">03</span><div><h3>Build and integrate</h3><p>Script it, connect the tools, and wire in the reporting so results are visible from day one.</p></div></li>
+      <li class="reveal"><span class="num mono">04</span><div><h3>Test and hand over</h3><p>Run it against real cases, fix what breaks, then document it so the team can maintain it without me.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ TOOLKIT ============ -->
+<section class="section" id="toolkit">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow mono reveal"><span class="rule"></span>Toolkit</p>
+      <h2 class="display h2 reveal">WHAT I BUILD<br>WITH</h2>
+    </div>
+
+    <div class="kit-group reveal">
+      <h3 class="sub mono">Automation &amp; productivity</h3>
+      <div class="kit">
+        <div class="chip"><img src="icons/gas.png" alt=""><span>Apps Script</span></div>
+        <div class="chip"><img src="icons/make.png" alt=""><span>Make.com</span></div>
+        <div class="chip"><img src="icons/zapier.png" alt=""><span>Zapier</span></div>
+        <div class="chip"><img src="icons/n8n.png" alt=""><span>n8n</span></div>
+        <div class="chip"><img src="icons/notion.png" alt=""><span>Notion</span></div>
+        <div class="chip"><img src="icons/airtable.png" alt=""><span>Airtable</span></div>
+        <div class="chip"><img src="icons/kintone.png" alt=""><span>Kintone</span></div>
+        <div class="chip"><img src="icons/clickup.png" alt=""><span>ClickUp</span></div>
+      </div>
+    </div>
+
+    <div class="kit-group reveal">
+      <h3 class="sub mono">Google Workspace</h3>
+      <div class="kit">
+        <div class="chip"><img src="icons/google-sheets.png" alt=""><span>Sheets</span></div>
+        <div class="chip"><img src="icons/google-docs.png" alt=""><span>Docs</span></div>
+        <div class="chip"><img src="icons/google-slides.png" alt=""><span>Slides</span></div>
+        <div class="chip"><img src="icons/google-drive.png" alt=""><span>Drive</span></div>
+        <div class="chip"><img src="icons/google-forms.png" alt=""><span>Forms</span></div>
+      </div>
+    </div>
+
+    <div class="kit-group reveal">
+      <h3 class="sub mono">Code</h3>
+      <div class="kit">
+        <div class="chip chip-text"><span>HTML</span></div>
+        <div class="chip chip-text"><span>CSS</span></div>
+        <div class="chip chip-text"><span>JavaScript</span></div>
+        <div class="chip chip-text"><span>Python</span></div>
+        <div class="chip chip-text"><span>Java</span></div>
+        <div class="chip chip-text"><span>C++</span></div>
+      </div>
+    </div>
+
+    <div class="kit-group reveal">
+      <h3 class="sub mono">AI &amp; integrations</h3>
+      <div class="kit">
+        <div class="chip chip-text"><span>OpenAI</span></div>
+        <div class="chip chip-text"><span>Claude</span></div>
+        <div class="chip chip-text"><span>Gemini</span></div>
+        <div class="chip chip-text"><span>Vertex AI</span></div>
+        <div class="chip chip-text"><span>Groq</span></div>
+        <div class="chip chip-text"><span>Perplexity</span></div>
+        <div class="chip chip-text"><span>ElevenLabs</span></div>
+        <div class="chip chip-text"><span>Descript</span></div>
+      </div>
+    </div>
+
+    <div class="kit-group reveal">
+      <h3 class="sub mono">Design, video &amp; office</h3>
+      <div class="kit">
+        <div class="chip"><img src="icons/canva.png" alt=""><span>Canva</span></div>
+        <div class="chip"><img src="icons/photoshop.png" alt=""><span>Photoshop</span></div>
+        <div class="chip"><img src="icons/illustrator.png" alt=""><span>Illustrator</span></div>
+        <div class="chip"><img src="icons/capcut.png" alt=""><span>CapCut</span></div>
+        <div class="chip"><img src="icons/excel.png" alt=""><span>Excel</span></div>
+        <div class="chip"><img src="icons/word.png" alt=""><span>Word</span></div>
+        <div class="chip"><img src="icons/powerpoint.png" alt=""><span>PowerPoint</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESIGN GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="head">
+      <p class="eyebrow mono reveal"><span class="rule"></span>Design &amp; video</p>
+      <h2 class="display h2 reveal">THE VISUAL<br>SIDE</h2>
+    </div>
+
+    <h3 class="sub mono reveal">Product posters</h3>
+    <div class="masonry">
+      <a class="shot reveal" href="designs/facial.png" data-caption="Hydrating facial serum"><img src="designs/facial.png" alt="Facial serum poster"><span class="shot-cap">Facial Serum</span></a>
+      <a class="shot reveal" href="designs/poster-coffee.png" data-caption="Cold brew vanilla"><img src="designs/poster-coffee.png" alt="Cold brew coffee poster"><span class="shot-cap">Cold Brew</span></a>
+      <a class="shot reveal" href="designs/banana.png" data-caption="Banana cream drink"><img src="designs/banana.png" alt="Banana cream drink poster"><span class="shot-cap">Banana Cream</span></a>
+      <a class="shot reveal" href="designs/java.png" data-caption="Java chip ice blended"><img src="designs/java.png" alt="Java chip frappe poster"><span class="shot-cap">Java Chip</span></a>
+      <a class="shot reveal" href="designs/sprite.png" data-caption="Sprite refreshment"><img src="designs/sprite.png" alt="Sprite poster"><span class="shot-cap">Sprite</span></a>
+      <a class="shot reveal" href="designs/pumpkin.png" data-caption="Pumpkin spice latte"><img src="designs/pumpkin.png" alt="Pumpkin spice latte poster"><span class="shot-cap">Pumpkin Spice</span></a>
+    </div>
+
+    <h3 class="sub mono reveal">Video edits</h3>
+    <div class="cards-3">
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1TuK98l0tUcM9oeUIHhrt9qOzHvn16mCr/preview">
+          <img src="thumbnails/campaign-thumb.png" alt="Brand campaign video">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body"><h4>Campaign Video</h4><p>Brand awareness piece cut for social.</p></div>
+      </article>
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1ksumOx_pCagSCWsEtEqkx_YIP0CE1DPC/preview">
+          <img src="thumbnails/process-thumb.png" alt="Company process explainer video">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body"><h4>Company Process</h4><p>Animated explainer simplifying an internal workflow.</p></div>
+      </article>
+      <article class="work reveal">
+        <a class="work-media video-link" href="https://drive.google.com/file/d/1UuyELoVmOixADoOyxwuQVx6ZwH1q-cad/preview">
+          <img src="thumbnails/demo-thumb.png" alt="Product demo video">
+          <span class="play">▶</span>
+        </a>
+        <div class="work-body"><h4>Product Commercial</h4><p>Short spot walking through key features.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA + CONTACT ============ -->
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+
+    <div class="cta-block reveal">
+      <h2 class="display">LET&apos;S BUILD<br>SOMETHING<br>THAT RUNS<br>ITSELF.</h2>
+      <p>Open to full-time, project-based and remote work. Tell me what&apos;s eating your team&apos;s time.</p>
+      <a href="mailto:mserikaguido@gmail.com" class="btn btn-invert">Start a conversation <span class="arw">↗</span></a>
+    </div>
+
+    <div class="contact-list">
+      <p class="eyebrow mono reveal"><span class="rule"></span>Get in touch</p>
+      <ul class="reveal">
+        <li><span class="mono">Email</span><a href="mailto:mserikaguido@gmail.com">mserikaguido@gmail.com</a></li>
+        <li><span class="mono">Phone</span><a href="tel:+639120367038">0912-036-7038</a></li>
+        <li><span class="mono">LinkedIn</span><a href="https://www.linkedin.com/in/erika-mae-guido-ba6a68249/" target="_blank" rel="noopener">erika-mae-guido ↗</a></li>
+        <li><span class="mono">GitHub</span><a href="https://github.com/erieaaa" target="_blank" rel="noopener">github.com/erieaaa ↗</a></li>
+        <li><span class="mono">Location</span><span>San Juan, Calamba City, Laguna</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span class="mono">© <span id="year"></span> Erika Mae Guido</span>
+    <span class="mono foot-note">&lt;/ built and designed by me /&gt;</span>
+  </div>
+</footer>
+
+<a href="#top" id="toTop" aria-label="Back to top">↑</a>
+
+<!-- media modal (video + image) -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <button class="modal-close" aria-label="Close">&times;</button>
+  <div class="modal-inner">
+    <div class="modal-frame"><iframe id="modal-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe></div>
+    <img id="modal-img" src="" alt="">
+    <p id="modal-cap" class="mono"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
